@@ -1,0 +1,17 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Oleksandr Soloviov",
+      "position": "Front-End Developer",
+      "about": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt nulla magnam ex laudantium!",
+      "photo": "https://i.ibb.co/85VKTkg/OlSol.jpg",
+      "socialLinks": {
+        "email": "mailto:soloviov.o.m@gmail.com",
+        "telegram": "https://t.me/OleksandrSoloviov",
+        "linkedIn": "https://www.linkedin.com/in/oleksandr-soloviov",
+        "gitHub": "https://github.com/SoloviovO"
+      }
+    }
+  ]
+}
