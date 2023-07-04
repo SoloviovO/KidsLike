@@ -1,8 +1,8 @@
 import React from 'react';
-import Prize from '../../images/Prize.png';
-import CleanGigl from '../../images/Clean-girl.png';
-import Robo from '../../images/Robo.png';
-import Clean from '../../images/Clean.png';
+import Prize from '../../../images/Prize.png';
+import CleanGigl from '../../../images/Clean-girl.png';
+import Robo from '../../../images/Robo.png';
+import Clean from '../../../images/Clean.png';
 import {
   BoxFirst,
   BoxFourth,
