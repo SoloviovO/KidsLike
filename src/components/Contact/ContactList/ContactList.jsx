@@ -1,7 +1,9 @@
 import React from 'react';
+
 import contactList from './Contact.json';
-import { ContactListWr } from './ContactList.styled';
 import ContactItem from 'components/Contact/ContactItem/ContactItem';
+
+import { ContactListWr } from './ContactList.styled';
 
 const ContactList = () => {
   const { contacts } = contactList;

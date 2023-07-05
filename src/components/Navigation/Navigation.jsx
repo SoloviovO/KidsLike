@@ -1,7 +1,8 @@
-import AuthNav from 'components/Auth/AuthNav/AuthNav';
-import UserNav from 'components/Auth/UserNav/UserNav';
 import React from 'react';
 import { useSelector } from 'react-redux';
+
+import AuthNav from 'components/Auth/AuthNav/AuthNav';
+import UserNav from 'components/Auth/UserNav/UserNav';
 import { selectIsLoggedIn } from 'redux/Auth/AuthSelectors';
 
 const Navigation = () => {

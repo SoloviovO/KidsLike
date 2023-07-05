@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export const FormBox = styled.div`
-  width: 280px;
   margin-left: auto;
   margin-right: auto;
   padding: 40px 0 60px;
 
+  width: 280px;
+
   @media screen and (min-width: 768px) {
     width: 400px;
-  }
-  @media screen and (min-width: 1280px) {
   }
 `;
 
 export const PageTitle = styled.h2`
   margin-bottom: 35px;
+
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
@@ -23,6 +23,7 @@ export const PageTitle = styled.h2`
 
   @media screen and (min-width: 768px) {
     margin-bottom: 32px;
+
     font-size: 28px;
     line-height: 34px;
   }
@@ -36,6 +37,7 @@ export const PageTitle = styled.h2`
 export const PageForm = styled.form`
   @media screen and (min-width: 768px) {
     padding: 40px 32px;
+
     background: #ffffff;
     box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
@@ -47,16 +49,12 @@ export const PageForm = styled.form`
 
 export const FormTitle = styled.p`
   margin-bottom: 35px;
+
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.04em;
   color: #858598;
-
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const LabelRequired = styled.span`
@@ -65,16 +63,12 @@ export const LabelRequired = styled.span`
   line-height: 15px;
   letter-spacing: 0.04em;
   color: #eb5757;
-
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const FormLabel = styled.label`
-  position: relative;
   margin-bottom: 24px;
+
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -83,15 +77,11 @@ export const FormLabel = styled.label`
   line-height: 15px;
   letter-spacing: 0.04em;
   color: #858598;
-
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const FormInputEmail = styled.input`
   padding: 12px 22px 12px 8px;
+
   display: block;
   border: none;
   outline: none;
@@ -104,10 +94,6 @@ export const FormInputEmail = styled.input`
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.15);
   transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-  }
   &:hover,
   &:active,
   &:focus {
@@ -117,6 +103,7 @@ export const FormInputEmail = styled.input`
 
 export const FormInputPassword = styled.input`
   padding: 12px 22px 12px 8px;
+
   display: block;
   border: none;
   outline: none;
@@ -129,10 +116,6 @@ export const FormInputPassword = styled.input`
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.15);
   transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-  }
   &:hover,
   &:active,
   &:focus {
@@ -140,9 +123,10 @@ export const FormInputPassword = styled.input`
   }
 
   &::placeholder {
+    margin-right: 12px;
+
     position: absolute;
     bottom: 4px;
-    margin-right: 12px;
     font-weight: 400;
     font-size: 28px;
     line-height: 54px;
@@ -160,10 +144,6 @@ export const FormValidError = styled.div`
   line-height: 12px;
   letter-spacing: 0.04em;
   color: #eb5757;
-  @media screen and (min-width: 768px) {
-  }
-  @media screen and (min-width: 1280px) {
-  }
 `;
 
 export const FormButton = styled.button`

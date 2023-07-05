@@ -7,7 +7,6 @@ export const ContactListWr = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 16px;
-
   max-width: 280px;
 
   @media screen and (min-width: 768px) {

@@ -25,7 +25,7 @@ export const ContactItems = styled.li`
 export const ContactImg = styled.img`
   width: 100%;
   max-height: 246px;
-
+  object-fit: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 
@@ -43,6 +43,7 @@ export const ContactInfo = styled.div`
 
 export const ContactName = styled.p`
   margin-bottom: 8px;
+
   font-weight: 700;
   font-size: 12px;
   line-height: 15px;

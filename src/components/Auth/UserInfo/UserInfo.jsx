@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+
 import { selectUserName } from 'redux/Auth/AuthSelectors';
 import { InfoBox, InfoLetter, InfoName, InfoWrapper } from './UserInfo.styled';
 
