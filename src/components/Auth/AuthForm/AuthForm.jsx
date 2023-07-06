@@ -5,13 +5,13 @@ import { toast } from 'react-toastify';
 import { logInUser, registerUser } from 'redux/Auth/AuthOperations';
 
 import {
-  FormBox,
   FormButton,
   FormInputEmail,
   FormInputPassword,
   FormLabel,
   FormTitle,
   FormValidError,
+  LabelBox,
   LabelRequired,
   PageForm,
   PageTitle,
@@ -95,51 +95,49 @@ const AuthForm = () => {
 
   return (
     <>
-      <FormBox>
-        <PageTitle>Do your homework, get some great prizes!</PageTitle>
-        <PageForm>
-          <FormTitle>
-            Log in with e-mail and password after registering:
-          </FormTitle>
-          <FormLabel>
-            <div>
-              <LabelRequired>*</LabelRequired>
-              Email:
-            </div>
-            <FormInputEmail
-              placeholder="your@email.com
+      <PageTitle>Do your homework, get some great prizes!</PageTitle>
+      <PageForm>
+        <FormTitle>
+          Log in with e-mail and password after registering:
+        </FormTitle>
+        <FormLabel>
+          <LabelBox>
+            <LabelRequired>*</LabelRequired>
+            Email:
+          </LabelBox>
+          <FormInputEmail
+            placeholder="your@email.com
             "
-              onChange={handleChange}
-              value={email}
-              type="email"
-              name="email"
-              required
-            />
-            {emailError && <FormValidError>{emailError}</FormValidError>}
-          </FormLabel>
-          <FormLabel>
-            <div>
-              <LabelRequired>*</LabelRequired>
-              Password:
-            </div>
-            <FormInputPassword
-              placeholder="••••••••"
-              onChange={handleChange}
-              value={password}
-              type="password"
-              name="password"
-              required
-            />
-            {passwordError && <FormValidError>{passwordError}</FormValidError>}
-          </FormLabel>
-          <FormButton type="button" onClick={handleLogIn}>
-            Log In
-          </FormButton>
-          <FormButton type="button" onClick={handleRegistration}>
-            Register
-          </FormButton>
-        </PageForm>
-      </FormBox>
+            onChange={handleChange}
+            value={email}
+            type="email"
+            name="email"
+            required
+          />
+          {emailError && <FormValidError>{emailError}</FormValidError>}
+        </FormLabel>
+        <FormLabel>
+          <LabelBox>
+            <LabelRequired>*</LabelRequired>
+            Password:
+          </LabelBox>
+          <FormInputPassword
+            placeholder="••••••••"
+            onChange={handleChange}
+            value={password}
+            type="password"
+            name="password"
+            required
+          />
+          {passwordError && <FormValidError>{passwordError}</FormValidError>}
+        </FormLabel>
+        <FormButton type="button" onClick={handleLogIn}>
+          Log In
+        </FormButton>
+        <FormButton type="button" onClick={handleRegistration}>
+          Register
+        </FormButton>
+      </PageForm>
     </>
   );
 };

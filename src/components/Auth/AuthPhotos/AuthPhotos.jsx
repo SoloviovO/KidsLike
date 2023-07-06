@@ -10,10 +10,7 @@ import {
   BoxFourth,
   BoxSecond,
   BoxThird,
-  ImgFirst,
-  ImgFourth,
-  ImgSecond,
-  ImgThird,
+  Image,
   PhotosWrapper,
 } from './AuthPhotos.styled';
 
@@ -22,16 +19,16 @@ const AuthPhotos = () => {
     <>
       <PhotosWrapper>
         <BoxFirst>
-          <ImgFirst src={Clean} alt="prize" />
+          <Image src={Clean} alt="clean" />
         </BoxFirst>
         <BoxSecond>
-          <ImgSecond src={Prize} alt="clean girl" />
+          <Image src={Prize} alt="prize" />
         </BoxSecond>
         <BoxThird>
-          <ImgThird src={Robo} alt="robo" />
+          <Image src={Robo} alt="robo" />
         </BoxThird>
         <BoxFourth>
-          <ImgFourth src={CleanGigl} alt="clean" />
+          <Image src={CleanGigl} alt="clean girl" />
         </BoxFourth>
       </PhotosWrapper>
     </>

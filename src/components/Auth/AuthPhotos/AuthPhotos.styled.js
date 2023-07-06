@@ -40,11 +40,6 @@ export const BoxFirst = styled.div`
   }
 `;
 
-export const ImgFirst = styled.img`
-  display: block;
-  object-fit: contain;
-`;
-
 export const BoxSecond = styled.div`
   width: 290px;
   height: 98px;
@@ -71,11 +66,6 @@ export const BoxSecond = styled.div`
   }
 `;
 
-export const ImgSecond = styled.img`
-  display: block;
-  object-fit: contain;
-`;
-
 export const BoxThird = styled.div`
   display: none;
 
@@ -95,11 +85,6 @@ export const BoxThird = styled.div`
     top: 326px;
     left: 0;
   }
-`;
-
-export const ImgThird = styled.img`
-  display: block;
-  object-fit: contain;
 `;
 
 export const BoxFourth = styled.div`
@@ -124,7 +109,7 @@ export const BoxFourth = styled.div`
   }
 `;
 
-export const ImgFourth = styled.img`
+export const Image = styled.img`
   display: block;
   object-fit: contain;
 `;
