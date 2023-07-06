@@ -1,17 +1,5 @@
 import styled from 'styled-components';
 
-export const FormBox = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px 0 60px;
-
-  width: 280px;
-
-  @media screen and (min-width: 768px) {
-    width: 400px;
-  }
-`;
-
 export const PageTitle = styled.h2`
   margin-bottom: 35px;
 
@@ -77,6 +65,10 @@ export const FormLabel = styled.label`
   line-height: 15px;
   letter-spacing: 0.04em;
   color: #858598;
+`;
+
+export const LabelBox = styled.div`
+  display: inline-block;
 `;
 
 export const FormInputEmail = styled.input`
@@ -147,6 +139,8 @@ export const FormValidError = styled.div`
 `;
 
 export const FormButton = styled.button`
+  padding: 0;
+
   width: 135px;
   height: 48px;
   border: none;
@@ -163,7 +157,7 @@ export const FormButton = styled.button`
     width: 160px;
   }
   @media screen and (min-width: 1280px) {
-    width: 152px;
+    width: 153px;
   }
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -175,8 +169,12 @@ export const FormButton = styled.button`
 
   &:not(:last-child) {
     margin-right: 10px;
+
     @media screen and (min-width: 768px) {
       margin-right: 16px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-right: 8px;
     }
   }
 `;
