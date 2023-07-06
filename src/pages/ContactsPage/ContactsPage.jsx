@@ -6,6 +6,7 @@ import {
   ContactTitle,
   ContactWrapper,
 } from './ContactsPage.styled';
+import Footer from 'shared/Footer/Footer';
 
 const ContactsPage = () => {
   return (
@@ -15,6 +16,7 @@ const ContactsPage = () => {
           <ContactTitle>Our team</ContactTitle>
           <ContactSubtitle>Always ready for new challenges!</ContactSubtitle>
           <ContactList />
+          <Footer />
         </ContactWrapper>
       </Container>
     </>

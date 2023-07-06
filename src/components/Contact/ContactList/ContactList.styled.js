@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const ContactListWr = styled.ul`
+  margin-bottom: 60px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -14,7 +15,6 @@ export const ContactListWr = styled.ul`
     gap: 20px 32px;
   }
   @media screen and (min-width: 1280px) {
-    padding: 22px 0;
     max-width: 1248px;
   }
 `;
