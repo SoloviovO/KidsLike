@@ -1,17 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
-import { logOutUser } from 'redux/Auth/AuthOperations';
 import { ReactComponent as LogOutIcon } from '../../images/logout.svg';
 
 import { LogOutBtn } from './LogOut.styled';
 
-const LogOut = () => {
-  const dispatch = useDispatch();
-
+const LogOut = ({ openModal }) => {
   return (
     <>
-      <LogOutBtn type="button" onClick={() => dispatch(logOutUser())}>
+      <LogOutBtn type="button" onClick={openModal}>
         <LogOutIcon />
       </LogOutBtn>
     </>
