@@ -25,7 +25,7 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     award: awardsReducer,
-    planning: planningReducer,
+    task: planningReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

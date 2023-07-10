@@ -9,7 +9,7 @@ import { toggleTaskStatus } from 'redux/Planning/PlanningOperations';
 import { ReactComponent as Check } from '../../images/checked.svg';
 import { ReactComponent as Attention } from '../../images/attention.svg';
 
-const TaskToogle = ({ _id, isCompleted, isSelected }) => {
+const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const dates = useSelector(selectDates, shallowEqual);
@@ -55,4 +55,4 @@ const TaskToogle = ({ _id, isCompleted, isSelected }) => {
   );
 };
 
-export default TaskToogle;
+export default TaskToggle;
