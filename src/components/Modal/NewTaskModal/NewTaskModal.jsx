@@ -117,7 +117,7 @@ const NewTaskModal = ({ onClose }) => {
         <div>
           <img src={modalRobot} alt="modal robo" />
           <button type="button" onClick={() => imageInputRef.current?.click()}>
-            <img src={modalImage} alt="file image" />
+            <img src={modalImage} alt="file" />
           </button>
           <form onSubmit={onHandleSubmit}>
             <input
@@ -128,7 +128,7 @@ const NewTaskModal = ({ onClose }) => {
             />
             <div>
               <label>
-                <img src={modalEditInput} alt="modalEditInput" />
+                <img src={modalEditInput} alt="modal Edit Input" />
                 <input
                   type="text"
                   placeholder="Add task..."
@@ -139,7 +139,7 @@ const NewTaskModal = ({ onClose }) => {
             </div>
             <div>
               <label>
-                <img src={modalEditInput} alt="modalEditInput" />
+                <img src={modalEditInput} alt="modal Edit Input" />
                 <input
                   type="number"
                   placeholder="Add points..."
