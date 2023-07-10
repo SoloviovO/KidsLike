@@ -16,7 +16,7 @@ import { useDispatch } from 'react-redux';
 
 const modalEl = document.querySelector('#modal-root');
 
-const ModalLogout = ({ onClose, children }) => {
+const ModalLogout = ({ onClose }) => {
   const dispatch = useDispatch();
 
   const [isModalOpen, setModalOpen] = useState(false);

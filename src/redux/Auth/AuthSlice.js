@@ -1,11 +1,11 @@
+import { createSlice } from '@reduxjs/toolkit';
+
 import {
   fetchCurrentUser,
   logInUser,
   logOutUser,
   registerUser,
 } from './AuthOperations';
-
-const { createSlice } = require('@reduxjs/toolkit');
 
 const authInitialState = {
   user: {},
@@ -25,7 +25,7 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.week = payload.week;
       })
-      .addCase(registerUser.rejected, (state, action) => {
+      .addCase(registerUser.rejected, state => {
         state.isLoggedIn = false;
       })
       .addCase(logInUser.fulfilled, (state, { payload }) => {
@@ -34,10 +34,10 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.week = payload.week;
       })
-      .addCase(logInUser.rejected, (state, { payload }) => {
+      .addCase(logInUser.rejected, state => {
         state.isLoggedIn = false;
       })
-      .addCase(logOutUser.fulfilled, (state, { payload }) => {
+      .addCase(logOutUser.fulfilled, state => {
         state.user = {
           name: null,
           email: null,
@@ -50,7 +50,7 @@ const authSlice = createSlice({
         state.isLoggedIn = true;
         state.week = payload.week;
       })
-      .addCase(fetchCurrentUser.rejected, (state, { payload }) => {
+      .addCase(fetchCurrentUser.rejected, state => {
         state.isLoggedIn = false;
       });
   },

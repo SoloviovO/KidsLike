@@ -1,15 +1,24 @@
 import React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import CardTitle from 'components/Cards/CardTitle/CardTitle';
 import PointAmount from 'components/PointAmount/PointAmount';
-import TaskToogle from 'components/TaskToogle/TaskToogle';
+import TaskToggle from 'components/TaskToggle/TaskToogle';
 
 import { ReactComponent as Success } from '../../../images/success.svg';
 import { ReactComponent as UnSuccess } from '../../../images/unsuccess.svg';
+import AddPlanningBtn from 'shared/AddPlanningBtn/AddPlanningBtn';
+
+const PATH_NAME = Object.freeze({
+  MAIN: '/main',
+  PLANNING: '/planning',
+  AWARD: '/award',
+});
 
 const CardFooter = ({ ...taskInfo }) => {
-  const { title, isCompleted } = taskInfo;
+  const { title, isCompleted, isSelected } = taskInfo;
+  const { pathname } = useLocation();
 
   const [searchParams] = useSearchParams();
 
@@ -19,15 +28,30 @@ const CardFooter = ({ ...taskInfo }) => {
   taskInfo.reward ? (reward = taskInfo.reward) : (reward = taskInfo.price);
 
   const renderElement = () => {
-    const currentWeekDay = new Date().toLocaleString('en-US', {
-      weekday: 'long',
-    });
+    switch (pathname) {
+      case PATH_NAME.MAIN: {
+        const currentWeekDay = new Date().toLocaleString('en-US', {
+          weekday: 'long',
+        });
 
-    if (currentWeekDay === searchParams.get('day')) {
-      return <TaskToogle _id={_id} isCompleted={isCompleted} />;
+        if (currentWeekDay === searchParams.get('day')) {
+          return <TaskToggle _id={_id} isCompleted={isCompleted} />;
+        }
+
+        return isCompleted ? <Success /> : <UnSuccess />;
+      }
+
+      case PATH_NAME.PLANNING: {
+        return <AddPlanningBtn _id={_id} />;
+      }
+
+      case PATH_NAME.AWARD: {
+        return <TaskToggle _id={_id} isCompleted={isSelected} />;
+      }
+
+      default:
+        return toast.error('NotFound');
     }
-
-    return isCompleted ? <Success /> : <UnSuccess />;
   };
   return (
     <>
