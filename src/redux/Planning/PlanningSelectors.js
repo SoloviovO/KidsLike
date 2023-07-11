@@ -7,6 +7,8 @@ export const selectRewardsGained = state => state.task.rewardsGained;
 
 export const selectRewardsPlanned = state => state.task.rewardsPlanned;
 
+export const selectBalance = state => state.task.balance;
+
 export const selectAllTasks = createSelector([selectTasks], tasks =>
   tasks.map(({ _id, imageUrl, reward, title }) => ({
     _id,
@@ -53,6 +55,36 @@ export const selectDaysList = createSelector(
       });
     }
 
+    return tasksDay;
+  }
+);
+
+export const selectDaysTasks = createSelector(
+  [selectTasks, (_, currentDate) => currentDate],
+  (tasks, currentDate) => {
+    if (!currentDate) {
+      return null;
+    }
+
+    const tasksDay = [];
+
+    for (let i = 0; i < tasks.length; i++) {
+      const currentTask = tasks[i];
+
+      const activeTasks = currentTask.days.find(
+        ({ date, isActive }) => date === currentDate && isActive
+      );
+
+      if (activeTasks) {
+        tasksDay.push({
+          _id: currentTask._id,
+          title: currentTask.title,
+          reward: currentTask.reward,
+          imageUrl: currentTask.imageUrl,
+          isCompleted: activeTasks?.isCompleted,
+        });
+      }
+    }
     return tasksDay;
   }
 );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import Loader from 'shared/Loader/Loader';
 
 const WeekTabs = ({ weekDays }) => {
   const currentDay = new Date().toLocaleString('en-US', {
@@ -24,7 +25,7 @@ const WeekTabs = ({ weekDays }) => {
 
   return (
     <>
-      {weekDays && (
+      {weekDays ? (
         <ul>
           {weekDays.map(day => (
             <li key={day}>
@@ -42,6 +43,8 @@ const WeekTabs = ({ weekDays }) => {
             </li>
           ))}
         </ul>
+      ) : (
+        <Loader width="230" color="#5679D7" />
       )}
     </>
   );

@@ -2,10 +2,11 @@ import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import { Progress } from 'react-sweet-progress';
 import 'react-sweet-progress/lib/style.css';
+
 import {
   selectRewardsGained,
   selectRewardsPlanned,
-} from 'redux/Auth/AuthSelectors';
+} from 'redux/Planning/PlanningSelectors';
 
 const ProgressBar = () => {
   const points = useSelector(selectRewardsGained || 0, shallowEqual);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { shallowEqual, useSelector } from 'react-redux';
 
 import CardList from 'components/Cards/CardList/CardList';
 import CurrentDay from 'components/CurrentDay/CurrentDay';
@@ -7,11 +7,13 @@ import CurrentWeekRange from 'components/CurrentWeekRange/CurrentWeekRange';
 import NoTasks from 'components/NoTasks/NoTasks';
 import ProgressBar from 'components/ProgressBar/ProgressBar';
 
-import { selectTasks } from 'redux/Auth/AuthSelectors';
+import { selectDaysTasks } from 'redux/Planning/PlanningSelectors';
 
 const WeekTabContent = ({ selectedDate }) => {
-  const tasks = useSelector(selectTasks);
-  // const tasks = {};
+  const tasks = useSelector(
+    state => selectDaysTasks(state, selectedDate),
+    shallowEqual
+  );
 
   let data = null;
 
