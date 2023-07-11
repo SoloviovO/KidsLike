@@ -5,6 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import WeekTabContent from 'components/WeekTabContent/WeekTabContent';
 import WeekTabs from 'components/WeekTabs/WeekTabs';
 import { selectDates } from 'redux/Auth/AuthSelectors';
+import Footer from 'shared/Footer/Footer';
 
 const MainPage = () => {
   const dates = useSelector(selectDates, shallowEqual);
@@ -20,6 +21,7 @@ const MainPage = () => {
     <>
       <WeekTabs weekDays={weekDays} />
       <WeekTabContent selectedDate={dates[selectedDay]} />
+      <Footer />
     </>
   );
 };
