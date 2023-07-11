@@ -3,16 +3,16 @@ import { createPortal } from 'react-dom';
 
 import { RxCross1 } from 'react-icons/rx';
 
-import { logOutUser } from 'redux/Auth/AuthOperations';
+// import { logOutUser } from 'redux/Auth/AuthOperations';
 
 import { Backdrop, CloseButton, Modal } from './CongratsModal.styled';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import ModalContentGetGifts from 'components/Awards/ModalContentGetGifts/ModalContentGetGifts';
 
 const modalEl = document.querySelector('#modal-root');
 
 const CongratsModal = ({ onClose, awards }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [isModalOpen, setModalOpen] = useState(false);
   const modalRef = useRef(null);
