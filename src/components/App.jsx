@@ -9,7 +9,7 @@ import MainPage from 'pages/MainPage/MainPage';
 import PlanningPage from 'pages/PlanningPage/PlanningPage';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
-import { fetchCurrentUser } from 'redux/Auth/AuthOperations';
+import { currentUserInfo } from 'redux/Auth/AuthOperations';
 import { PrivateRoute } from '../shared/PrivateRoute/PrivateRoute';
 import { PublicRoute } from '../shared/PublicRoute/PublicRoute';
 import Header from '../shared/Header/Header';
@@ -18,7 +18,7 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCurrentUser());
+    dispatch(currentUserInfo());
   }, [dispatch]);
 
   return (
@@ -26,7 +26,8 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Header />}>
           <Route
-            path="/main"
+            index
+            // path="/main"
             element={
               <PrivateRoute>
                 <MainPage />

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchCurrentUser, logInUser } from 'redux/Auth/AuthOperations';
+import { currentUserInfo, logInUser } from 'redux/Auth/AuthOperations';
 import {
   addTaskToProvidedDays,
   createTask,
@@ -32,7 +32,7 @@ const planningSlice = createSlice({
       .addCase(toggleTaskStatus.rejected, state => {
         state.isLoading = false;
       })
-      .addCase(fetchCurrentUser.fulfilled, (state, { payload }) => {
+      .addCase(currentUserInfo.fulfilled, (state, { payload }) => {
         state.tasks = payload.week.tasks;
         state.balance = payload.user.balance;
         state.rewardsGained = payload.week.rewardsGained;

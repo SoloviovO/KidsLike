@@ -21,7 +21,7 @@ import {
 } from 'redux/Planning/PlanningSelectors';
 
 const PATH_NAME = Object.freeze({
-  MAIN: '/main',
+  MAIN: '/',
   PLANNING: '/planning',
   AWARD: '/awards',
 });

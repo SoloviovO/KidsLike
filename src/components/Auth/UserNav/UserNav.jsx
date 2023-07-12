@@ -14,7 +14,7 @@ const UserNav = () => {
 
   return (
     <>
-      <NavLink to="/main">Main</NavLink>
+      <NavLink to="/">Main</NavLink>
       <NavLink to="/planning">Planning</NavLink>
       <NavLink to="/awards">Award</NavLink>
       <NavLink to="/contacts">Contacts</NavLink>

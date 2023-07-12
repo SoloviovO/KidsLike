@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
-  fetchCurrentUser,
+  currentUserInfo,
   logInUser,
   logOutUser,
   registerUser,
@@ -45,12 +45,12 @@ const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
       })
-      .addCase(fetchCurrentUser.fulfilled, (state, { payload }) => {
+      .addCase(currentUserInfo.fulfilled, (state, { payload }) => {
         state.user = payload.user;
         state.isLoggedIn = true;
         state.week = payload.week;
       })
-      .addCase(fetchCurrentUser.rejected, state => {
+      .addCase(currentUserInfo.rejected, state => {
         state.isLoggedIn = false;
       });
   },
