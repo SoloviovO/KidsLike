@@ -7,7 +7,7 @@ import { LogoLink, LogoText } from './Logo.styled';
 const Logo = () => {
   return (
     <>
-      <LogoLink to="/main">
+      <LogoLink to="/">
         <LogoText>KidsLike</LogoText>
         <LogoMain />
       </LogoLink>

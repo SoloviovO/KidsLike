@@ -7,6 +7,9 @@ import WeekTabs from 'components/WeekTabs/WeekTabs';
 import { selectDates } from 'redux/Auth/AuthSelectors';
 import Footer from 'shared/Footer/Footer';
 
+import { Container } from 'components/App.styled';
+import { MainBox, MainWrapper } from './MainPage.styled';
+
 const MainPage = () => {
   const dates = useSelector(selectDates, shallowEqual);
   const [searchParams] = useSearchParams();
@@ -19,9 +22,15 @@ const MainPage = () => {
 
   return (
     <>
-      <WeekTabs weekDays={weekDays} />
-      <WeekTabContent selectedDate={dates[selectedDay]} />
-      <Footer />
+      <Container>
+        <MainWrapper>
+          <WeekTabs weekDays={weekDays} />
+          <MainBox>
+            <WeekTabContent selectedDate={dates[selectedDay]} />
+            <Footer />
+          </MainBox>
+        </MainWrapper>
+      </Container>
     </>
   );
 };

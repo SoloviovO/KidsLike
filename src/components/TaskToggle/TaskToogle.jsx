@@ -27,7 +27,7 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   });
 
   const handleToggleChange = event => {
-    if (pathname === '/main') {
+    if (pathname === '/') {
       setIsLoading(true);
       dispatch(
         toggleTaskStatus({

@@ -11,7 +11,7 @@ import { ReactComponent as UnSuccess } from '../../../images/unsuccess.svg';
 import AddPlanningBtn from 'shared/AddPlanningBtn/AddPlanningBtn';
 
 const PATH_NAME = Object.freeze({
-  MAIN: '/main',
+  MAIN: '/',
   PLANNING: '/planning',
   AWARD: '/awards',
 });
