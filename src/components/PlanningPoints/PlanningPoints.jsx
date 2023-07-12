@@ -23,7 +23,7 @@ import {
 const PATH_NAME = Object.freeze({
   MAIN: '/main',
   PLANNING: '/planning',
-  AWARD: '/award',
+  AWARD: '/awards',
 });
 
 const PlanningPoints = () => {

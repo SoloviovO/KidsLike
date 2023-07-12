@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
 import { toast } from 'react-toastify';
@@ -41,7 +41,8 @@ const AwardsPage = () => {
       );
       setOpen(true);
     }
-  }, [boughtGiftsIds, gifts]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [boughtGiftsIds]);
 
   const buyHandler = () => {
     const selectedGiftsIds = gifts.reduce((acc, gift) => {
@@ -85,11 +86,9 @@ const AwardsPage = () => {
         <div>
           <AwardsSubmitButton buyHandler={buyHandler} />
         </div>
-        <CongratsModal
-          awards={dataForModal}
-          open={open}
-          onClose={handleModalClose}
-        />
+        {open && (
+          <CongratsModal awards={dataForModal} onClose={handleModalClose} />
+        )}
       </div>
       <div>
         <Footer />

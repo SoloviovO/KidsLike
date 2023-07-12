@@ -16,7 +16,7 @@ const UserNav = () => {
     <>
       <NavLink to="/main">Main</NavLink>
       <NavLink to="/planning">Planning</NavLink>
-      <NavLink to="/award">Award</NavLink>
+      <NavLink to="/awards">Award</NavLink>
       <NavLink to="/contacts">Contacts</NavLink>
       <UserInfo />
       <LogOut openModal={handleTogleModal} />

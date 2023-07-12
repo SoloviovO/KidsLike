@@ -13,7 +13,7 @@ import AddPlanningBtn from 'shared/AddPlanningBtn/AddPlanningBtn';
 const PATH_NAME = Object.freeze({
   MAIN: '/main',
   PLANNING: '/planning',
-  AWARD: '/award',
+  AWARD: '/awards',
 });
 
 const CardFooter = ({ ...taskInfo }) => {

@@ -9,7 +9,7 @@ const awardsInitialState = {
 };
 
 const awardsSlice = createSlice({
-  name: 'awards',
+  name: 'award',
   initialState: awardsInitialState,
   reducers: {
     toggleSelectGift(state, { payload }) {
