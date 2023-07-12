@@ -1,5 +1,5 @@
-export const selectGifts = state => state.awards.gifts;
+export const selectGifts = state => state.award.gifts;
 
-export const selectIsLoadingGift = state => state.awards.isLoading;
+export const selectIsLoadingGift = state => state.award.isLoading;
 
-export const selectBoughtGiftsIds = state => state.awards.boughtGiftsIds;
+export const selectBoughtGiftsIds = state => state.award.boughtGiftsIds;

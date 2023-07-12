@@ -8,33 +8,46 @@ import { toggleTaskStatus } from 'redux/Planning/PlanningOperations';
 
 import { ReactComponent as Check } from '../../images/checked.svg';
 import { ReactComponent as Attention } from '../../images/attention.svg';
+import { selectGifts } from 'redux/Awards/AwardsSelectors';
+import { toggleSelectGift } from 'redux/Awards/AwardsSlice';
+import { useLocation } from 'react-router-dom';
 
 const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const dates = useSelector(selectDates, shallowEqual);
+  const gifts = useSelector(selectGifts, shallowEqual);
 
   const dispatch = useDispatch();
+
+  const { pathname } = useLocation();
 
   const currentDay = new Date().toLocaleString('en-US', {
     weekday: 'long',
   });
 
   const handleToggleChange = event => {
-    setIsLoading(true);
-    dispatch(
-      toggleTaskStatus({
-        id: _id,
-        body: { date: dates[currentDay] },
-      })
-    )
-      .unwrap()
-      .catch(error => {
-        toast.error(error.message);
-      })
-      .finally(() => {
-        setIsLoading(false);
+    if (pathname === '/main') {
+      setIsLoading(true);
+      dispatch(
+        toggleTaskStatus({
+          id: _id,
+          body: { date: dates[currentDay] },
+        })
+      )
+        .unwrap()
+        .catch(error => {
+          toast.error(error.message);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    } else if (pathname === '/awards') {
+      const idxInArray = gifts.findIndex(gift => {
+        return gift.id === +event.target.id;
       });
+      dispatch(toggleSelectGift(idxInArray));
+    }
   };
   return (
     <>

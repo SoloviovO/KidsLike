@@ -50,7 +50,7 @@ export const App = () => {
             }
           />
           <Route
-            path="/award"
+            path="/awards"
             element={
               <PrivateRoute>
                 <AwardsPage />
