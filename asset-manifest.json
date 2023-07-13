@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.css": "/KidsLike/static/css/main.ba9a827c.css",
-    "main.js": "/KidsLike/static/js/main.42f283e3.js",
+    "main.css": "/KidsLike/static/css/main.604cec32.css",
+    "main.js": "/KidsLike/static/js/main.8051f081.js",
+    "static/media/Clean-2x.png": "/KidsLike/static/media/Clean-2x.29b04722ee1785bf195c.png",
+    "static/media/Clean-girl-2x.png": "/KidsLike/static/media/Clean-girl-2x.bea3eb5ddc0f4b735f0a.png",
     "static/media/desk-2x.png": "/KidsLike/static/media/desk-2x.0ad1772df6f1d88ceb9b.png",
     "static/media/tablet-2x.png": "/KidsLike/static/media/tablet-2x.9465d0e474e8c9774e50.png",
     "static/media/Clean.png": "/KidsLike/static/media/Clean.54c49969602b69b6d2de.png",
     "static/media/Clean-girl.png": "/KidsLike/static/media/Clean-girl.446aea10a3168b4916d0.png",
+    "static/media/Prize-2x.png": "/KidsLike/static/media/Prize-2x.94ce77a985277c1c37ce.png",
     "static/media/desk.png": "/KidsLike/static/media/desk.3bb8ec7c58cbbd27c5b6.png",
     "static/media/tablet.png": "/KidsLike/static/media/tablet.413a977656966c34f677.png",
+    "static/media/Robo-2x.png": "/KidsLike/static/media/Robo-2x.5006c86c79190ec4cb0b.png",
+    "static/media/modal-cat-2x.png": "/KidsLike/static/media/modal-cat-2x.3af0531e740210a850af.png",
     "static/media/mob-2x.png": "/KidsLike/static/media/mob-2x.ad83ae29beaef847b930.png",
     "static/media/Prize.png": "/KidsLike/static/media/Prize.9d9e714513676d2af48a.png",
     "static/media/Robo.png": "/KidsLike/static/media/Robo.d1eef97f65b76ce02b94.png",
     "static/media/mob.png": "/KidsLike/static/media/mob.91518e2aa6fc1760b3bd.png",
     "static/media/modal-cat.png": "/KidsLike/static/media/modal-cat.61ab91b01de03672cdfc.png",
+    "static/media/modal-robot-2x.png": "/KidsLike/static/media/modal-robot-2x.863ed787e1ab25a1bc35.png",
     "static/media/modal-robot.png": "/KidsLike/static/media/modal-robot.439e07b913d494e2fce0.png",
     "static/media/victory.svg": "/KidsLike/static/media/victory.08c2d88835c5eb531906e4ffda1d3546.svg",
     "static/media/modal-image.svg": "/KidsLike/static/media/modal-image.10e657f4f3ba37b3b704615d4900675e.svg",
@@ -26,11 +32,11 @@
     "static/media/icon-addTasks.svg": "/KidsLike/static/media/icon-addTasks.e8b3a16718d1d622d07602b3df90c412.svg",
     "static/media/edit-log.svg": "/KidsLike/static/media/edit-log.402fb7f9fbfcc440d8313715473a1108.svg",
     "static/media/success.svg": "/KidsLike/static/media/success.f9703a50cdd4623dcd0184a41f444588.svg",
-    "main.ba9a827c.css.map": "/KidsLike/static/css/main.ba9a827c.css.map",
-    "main.42f283e3.js.map": "/KidsLike/static/js/main.42f283e3.js.map"
+    "main.604cec32.css.map": "/KidsLike/static/css/main.604cec32.css.map",
+    "main.8051f081.js.map": "/KidsLike/static/js/main.8051f081.js.map"
   },
   "entrypoints": [
-    "static/css/main.ba9a827c.css",
-    "static/js/main.42f283e3.js"
+    "static/css/main.604cec32.css",
+    "static/js/main.8051f081.js"
   ]
 }
