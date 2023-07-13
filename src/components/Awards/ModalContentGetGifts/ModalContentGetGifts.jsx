@@ -1,11 +1,15 @@
 import React from 'react';
-import modalcat from 'images/modal-cat.png';
+import modalcat from 'images/modal-img/modal-cat.png';
+import modalcatRet from 'images/modal-img/modal-cat-2x.png';
 
 const ModalContentGetGifts = ({ awards }) => {
   return (
     <>
       <div>
-        {<img src={modalcat} alt="modalcat" />}
+        <picture>
+          <source srcSet={`${modalcat}, ${modalcatRet} 2x`} />
+          <img src={modalcat} alt="modalcat" />
+        </picture>
         <h1>Congratulations! You get:</h1>
         <ul>
           {awards.map(award => (

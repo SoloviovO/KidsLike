@@ -1,24 +1,24 @@
-import { Container } from 'components/App.styled';
-import ContactList from 'components/Contact/ContactList/ContactList';
 import React from 'react';
-import {
-  ContactSubtitle,
-  ContactTitle,
-  ContactWrapper,
-} from './ContactsPage.styled';
+
+import ContactList from 'components/Contact/ContactList/ContactList';
 import Footer from 'shared/Footer/Footer';
+
+import styles from '../../components/App.module.scss';
+import style from './ContactsPage.module.scss';
 
 const ContactsPage = () => {
   return (
     <>
-      <Container>
-        <ContactWrapper>
-          <ContactTitle>Our team</ContactTitle>
-          <ContactSubtitle>Always ready for new challenges!</ContactSubtitle>
+      <div className={styles.Container}>
+        <div className={style.ContactWrapper}>
+          <h2 className={style.ContactTitle}>Our team</h2>
+          <h3 className={style.ContactSubtitle}>
+            Always ready for new challenges!
+          </h3>
           <ContactList />
           <Footer />
-        </ContactWrapper>
-      </Container>
+        </div>
+      </div>
     </>
   );
 };

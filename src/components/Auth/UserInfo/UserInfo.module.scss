@@ -1,0 +1,33 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.InfoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.InfoBox {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $user-info-bg-color;
+  border-radius: 50%;
+}
+
+.InfoLetter {
+  @include font(700, 18px, 22px);
+
+  letter-spacing: 0.04em;
+  color: $primary-bg-color;
+}
+
+.InfoName {
+  @include font(700, 12px, 15px);
+
+  letter-spacing: 0.04em;
+  color: $secondary-text-color;
+}

@@ -3,18 +3,18 @@ import React from 'react';
 import contactList from './Contact.json';
 import ContactItem from 'components/Contact/ContactItem/ContactItem';
 
-import { ContactListWr } from './ContactList.styled';
+import style from './ContactList.module.scss';
 
 const ContactList = () => {
   const { contacts } = contactList;
 
   return (
     <>
-      <ContactListWr>
+      <ul className={style.ContactListWr}>
         {contacts.map(item => (
           <ContactItem key={item.id} item={item} />
         ))}
-      </ContactListWr>
+      </ul>
     </>
   );
 };

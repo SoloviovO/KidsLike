@@ -7,23 +7,23 @@ import Navigation from 'components/Navigation/Navigation';
 import UserScore from 'components/Auth/UserScore/UserScore';
 import { selectIsLoggedIn } from 'redux/Auth/AuthSelectors';
 
-import { Container } from 'components/App.styled';
-import { HeaderBox, HeaderWrapper } from './Header.styled';
+import styles from '../../components/App.module.scss';
+import style from './Header.module.scss';
 
 function Header() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <>
-      <HeaderBox>
-        <Container>
-          <HeaderWrapper>
+      <div className={style.HeaderBox}>
+        <div className={styles.Container}>
+          <div className={style.HeaderWrapper}>
             <Logo />
             {isLoggedIn && <UserScore />}
             <Navigation />
-          </HeaderWrapper>
-        </Container>
-      </HeaderBox>
+          </div>
+        </div>
+      </div>
 
       <Outlet />
     </>

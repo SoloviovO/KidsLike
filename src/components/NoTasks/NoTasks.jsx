@@ -28,7 +28,7 @@ const NoTasks = () => {
           srcSet={`${bgMobile} 1x, ${bgMobile2x} 2x`}
           media="(min-width:320px)"
         />
-        <img src={bgMobile} alt="" />
+        <img src={bgMobile} alt="background" />
       </picture>
     </>
   );

@@ -2,14 +2,14 @@ import React from 'react';
 
 import { ReactComponent as LogOutIcon } from '../../images/logout.svg';
 
-import { LogOutBtn } from './LogOut.styled';
+import style from './LogOut.module.scss';
 
 const LogOut = ({ openModal }) => {
   return (
     <>
-      <LogOutBtn type="button" onClick={openModal}>
+      <button className={style.LogOutBtn} type="button" onClick={openModal}>
         <LogOutIcon />
-      </LogOutBtn>
+      </button>
     </>
   );
 };

@@ -1,19 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-
 import { RxCross1 } from 'react-icons/rx';
 
-// import { logOutUser } from 'redux/Auth/AuthOperations';
-
-import { Backdrop, CloseButton, Modal } from './CongratsModal.styled';
-// import { useDispatch } from 'react-redux';
 import ModalContentGetGifts from 'components/Awards/ModalContentGetGifts/ModalContentGetGifts';
+
+import style from '../ModalLogout/ModalLogout.module.scss';
 
 const modalEl = document.querySelector('#modal-root');
 
 const CongratsModal = ({ onClose, awards }) => {
-  // const dispatch = useDispatch();
-
   const [isModalOpen, setModalOpen] = useState(false);
   const modalRef = useRef(null);
 
@@ -60,24 +55,27 @@ const CongratsModal = ({ onClose, awards }) => {
   }, [isModalOpen]);
 
   return createPortal(
-    <Backdrop
-      className={`${isModalOpen ? 'Open' : ''}`}
+    <div
+      className={`${style.Backdrop} ${isModalOpen ? style.Open : ''}`}
       onClick={handleBackdropClick}
       tabIndex={-1}
       ref={modalRef}
     >
-      <Modal className={`${isModalOpen ? 'Open' : ''}`} tabIndex={0}>
-        <CloseButton
+      <div
+        className={`${style.Modal} ${isModalOpen ? style.Open : ''}`}
+        tabIndex={0}
+      >
+        <button
           aria-label="Закрити"
           type="button"
-          className="CloseButton"
+          className={style.CloseButton}
           onClick={handleClose}
         >
-          <RxCross1 className="CloseIcon" />
-        </CloseButton>
+          <RxCross1 className={style.CloseButtonIcon} />
+        </button>
         <ModalContentGetGifts awards={awards} />
-      </Modal>
-    </Backdrop>,
+      </div>
+    </div>,
     modalEl
   );
 };

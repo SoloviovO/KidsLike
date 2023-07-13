@@ -1,0 +1,139 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.Backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+  background: $backdrop-color;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity $secondary-transition, visibility 0s ease 0.3s;
+
+  &.Open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity $secondary-transition;
+  }
+}
+
+.Modal {
+  padding: 60px 20px;
+
+  position: relative;
+
+  background-color: $primary-bg-color;
+  border-radius: 18px;
+
+  opacity: 0;
+  transform: scale(0);
+  visibility: hidden;
+  transition: opacity $secondary-transition, visibility 0s linear 0.3s,
+    transform $secondary-transition;
+
+  @include tablet {
+    padding: 70px 100px;
+  }
+
+  &.Open {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    transition: opacity $secondary-transition, transform $secondary-transition;
+  }
+}
+
+.CloseButton {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+
+  @include tablet {
+    top: 24px;
+    right: 24px;
+
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.CloseButtonIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.TextModal {
+  margin-bottom: 44px;
+
+  @include font(500, 24px, 32px);
+
+  color: $subsidiary-text-color;
+  text-align: center;
+
+  @include tablet {
+    margin-bottom: 48px;
+
+    @include font(500, 36px, 42px);
+  }
+
+  @include desktop {
+    @include font(500, 24px, 32px);
+  }
+}
+
+.ModalButton {
+  padding: 0;
+
+  width: 125px;
+  height: 48px;
+  border: none;
+  background-color: $secondary-bg-color;
+  border-radius: 6px;
+
+  @include font(500, 12px, 15px);
+  letter-spacing: 0.02em;
+  color: $main-content-bg-color;
+  filter: drop-shadow($button-shadow);
+
+  @include tablet {
+    width: 160px;
+  }
+  @include desktop {
+    width: 153px;
+  }
+
+  transition: background-color $main-transition;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-success-color;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+
+    @include tablet {
+      margin-right: 16px;
+    }
+    @include desktop {
+      margin-right: 20px;
+    }
+  }
+}

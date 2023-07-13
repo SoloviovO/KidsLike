@@ -1,7 +1,9 @@
-import styled from 'styled-components';
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
 
-export const ContactListWr = styled.ul`
+.ContactListWr {
   margin-bottom: 60px;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -10,11 +12,12 @@ export const ContactListWr = styled.ul`
   gap: 16px;
   max-width: 280px;
 
-  @media screen and (min-width: 768px) {
+  @include tablet {
     max-width: 704px;
     gap: 20px 32px;
   }
-  @media screen and (min-width: 1280px) {
+
+  @include desktop {
     max-width: 1248px;
   }
-`;
+}

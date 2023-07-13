@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
 
-export const PhotosWrapper = styled.div`
+.PhotosWrapper {
   width: 100%;
   overflow: hidden;
 
-  @media screen and (min-width: 768px) {
+  @include tablet {
     position: relative;
     width: 100%;
     display: flex;
@@ -12,25 +13,26 @@ export const PhotosWrapper = styled.div`
     align-items: flex-end;
     overflow: hidden;
   }
-  @media screen and (min-width: 1280px) {
+  @include desktop {
     position: relative;
     width: 50%;
     overflow: visible;
   }
-`;
+}
 
-export const BoxFirst = styled.div`
+.BoxFirst {
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @include tablet {
     display: block;
     position: absolute;
     top: 80px;
     left: -7px;
+
     width: 301px;
     height: 247px;
   }
-  @media screen and (min-width: 1280px) {
+  @include desktop {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,14 +40,15 @@ export const BoxFirst = styled.div`
     width: 372px;
     height: 306px;
   }
-`;
+}
 
-export const BoxSecond = styled.div`
+.BoxSecond {
   width: 290px;
   height: 98px;
 
-  @media screen and (min-width: 768px) {
+  @include tablet {
     margin-left: -5px;
+
     position: absolute;
     z-index: 2;
     display: block;
@@ -55,7 +58,7 @@ export const BoxSecond = styled.div`
     width: 222px;
     height: 98px;
   }
-  @media screen and (min-width: 1280px) {
+  @include desktop {
     position: absolute;
     z-index: 0;
     top: 148px;
@@ -64,12 +67,12 @@ export const BoxSecond = styled.div`
     width: 372px;
     height: 306px;
   }
-`;
+}
 
-export const BoxThird = styled.div`
+.BoxThird {
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @include tablet {
     display: block;
     position: absolute;
     top: 326px;
@@ -78,26 +81,25 @@ export const BoxThird = styled.div`
     width: 372px;
     height: 306px;
   }
-  @media screen and (min-width: 1280px) {
+  @include desktop {
     display: block;
-
     position: absolute;
     top: 326px;
     left: 0;
   }
-`;
+}
 
-export const BoxFourth = styled.div`
+.BoxFourth {
   display: none;
 
-  @media screen and (min-width: 768px) {
+  @include tablet {
     display: block;
     transform: translate(77%, 10%);
 
     width: 297px;
     height: 239px;
   }
-  @media screen and (min-width: 1280px) {
+  @include desktop {
     position: absolute;
     transform: translate(0);
 
@@ -107,9 +109,9 @@ export const BoxFourth = styled.div`
     width: 359px;
     height: 290px;
   }
-`;
+}
 
-export const Image = styled.img`
+.Image {
   display: block;
   object-fit: contain;
-`;
+}

@@ -2,7 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectUserName } from 'redux/Auth/AuthSelectors';
-import { InfoBox, InfoLetter, InfoName, InfoWrapper } from './UserInfo.styled';
+
+import style from './UserInfo.module.scss';
 
 const UserInfo = () => {
   const userName = useSelector(selectUserName);
@@ -11,12 +12,12 @@ const UserInfo = () => {
   const nameUser = userName.slice(0, IndexValue);
   return (
     <>
-      <InfoWrapper>
-        <InfoBox>
-          <InfoLetter>{firstLetter}</InfoLetter>
-        </InfoBox>
-        <InfoName>{nameUser}</InfoName>
-      </InfoWrapper>
+      <div className={style.InfoWrapper}>
+        <div className={style.InfoBox}>
+          <p className={style.InfoLetter}>{firstLetter}</p>
+        </div>
+        <p className={style.InfoName}>{nameUser}</p>
+      </div>
     </>
   );
 };

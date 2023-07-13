@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
 
-export const AuthWrapper = styled.div`
+.AuthWrapper {
   margin: 0 auto;
 
   width: 100%;
@@ -8,22 +9,22 @@ export const AuthWrapper = styled.div`
   display: flex;
   flex-direction: column-reverse;
 
-  @media screen and (min-width: 1280px) {
+  @include desktop {
     flex-direction: row;
     gap: 167px;
   }
-`;
+}
 
-export const FormBox = styled.div`
+.FormBox {
   margin: 0 auto;
   padding: 40px 0 60px;
 
   width: 280px;
 
-  @media screen and (min-width: 768px) {
+  @include tablet {
     width: 400px;
   }
-  @media screen and (min-width: 1280px) {
+  @include desktop {
     width: 394px;
   }
-`;
+}

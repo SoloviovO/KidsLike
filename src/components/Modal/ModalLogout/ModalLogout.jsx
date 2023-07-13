@@ -1,18 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-
+import { useDispatch } from 'react-redux';
 import { RxCross1 } from 'react-icons/rx';
 
 import { logOutUser } from 'redux/Auth/AuthOperations';
 
-import {
-  Backdrop,
-  CloseButton,
-  Modal,
-  ModalButton,
-  TextModal,
-} from './ModalLogout.styled';
-import { useDispatch } from 'react-redux';
+import style from './ModalLogout.module.scss';
 
 const modalEl = document.querySelector('#modal-root');
 
@@ -65,30 +58,41 @@ const ModalLogout = ({ onClose }) => {
   }, [isModalOpen]);
 
   return createPortal(
-    <Backdrop
-      className={`${isModalOpen ? 'Open' : ''}`}
+    <div
+      className={`${style.Backdrop} ${isModalOpen ? style.Open : ''}`}
       onClick={handleBackdropClick}
       tabIndex={-1}
       ref={modalRef}
     >
-      <Modal className={`${isModalOpen ? 'Open' : ''}`} tabIndex={0}>
-        <CloseButton
+      <div
+        className={`${style.Modal} ${isModalOpen ? style.Open : ''}`}
+        tabIndex={0}
+      >
+        <button
           aria-label="Закрити"
           type="button"
-          className="CloseButton"
+          className={style.CloseButton}
           onClick={handleClose}
         >
-          <RxCross1 className="CloseIcon" />
-        </CloseButton>
-        <TextModal>Already leaving?</TextModal>
-        <ModalButton type="button" onClick={handleClose}>
+          <RxCross1 className={style.CloseButtonIcon} />
+        </button>
+        <p className={style.TextModal}>Already leaving?</p>
+        <button
+          className={style.ModalButton}
+          type="button"
+          onClick={handleClose}
+        >
           Cancel
-        </ModalButton>
-        <ModalButton type="button" onClick={() => dispatch(logOutUser())}>
+        </button>
+        <button
+          className={style.ModalButton}
+          type="button"
+          onClick={() => dispatch(logOutUser())}
+        >
           Yes
-        </ModalButton>
-      </Modal>
-    </Backdrop>,
+        </button>
+      </div>
+    </div>,
     modalEl
   );
 };
