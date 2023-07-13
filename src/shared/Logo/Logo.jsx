@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as LogoMain } from '../../images/victory.svg';
 
-import { LogoLink, LogoText } from './Logo.styled';
+import style from './Logo.module.scss';
 
 const Logo = () => {
   return (
     <>
-      <LogoLink to="/">
-        <LogoText>KidsLike</LogoText>
+      <Link className={style.LogoLink} to="/">
+        <p className={style.LogoText}>KidsLike</p>
         <LogoMain />
-      </LogoLink>
+      </Link>
     </>
   );
 };

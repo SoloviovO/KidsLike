@@ -1,0 +1,31 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.FooterBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    margin-left: auto;
+  }
+}
+
+.LogoBox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.LogoText {
+  @include font(400, 10px, 12px);
+
+  letter-spacing: 0.8px;
+  color: $secondary-text-color;
+}

@@ -1,0 +1,25 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.ScoreBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.ScoreTitle {
+  width: 57px;
+
+  @include font(500, 12px, 15px);
+
+  letter-spacing: 0.04em;
+  color: $subsidiary-text-color;
+}
+
+.ScoreValue {
+  @include font(700, 14px, 17px);
+
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
+}

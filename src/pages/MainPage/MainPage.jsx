@@ -7,7 +7,7 @@ import WeekTabs from 'components/WeekTabs/WeekTabs';
 import { selectDates } from 'redux/Auth/AuthSelectors';
 import Footer from 'shared/Footer/Footer';
 
-import { Container } from 'components/App.styled';
+import styles from '../../components/App.module.scss';
 import { MainBox, MainWrapper } from './MainPage.styled';
 
 const MainPage = () => {
@@ -22,7 +22,7 @@ const MainPage = () => {
 
   return (
     <>
-      <Container>
+      <div className={styles.Container}>
         <MainWrapper>
           <WeekTabs weekDays={weekDays} />
           <MainBox>
@@ -30,7 +30,7 @@ const MainPage = () => {
             <Footer />
           </MainBox>
         </MainWrapper>
-      </Container>
+      </div>
     </>
   );
 };

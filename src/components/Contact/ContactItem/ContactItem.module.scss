@@ -1,0 +1,88 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.ContactItems {
+  max-width: 280px;
+  background-color: $primary-bg-color;
+  box-shadow: $main-shadow;
+  border-radius: 6px;
+  transform: scale(1);
+  transition: $main-transition;
+
+  @include tablet {
+    max-width: 336px;
+  }
+  @include desktop {
+    max-width: 288px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.03);
+  }
+}
+
+.ContactImg {
+  width: 100%;
+  max-height: 246px;
+  object-fit: cover;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  @include tablet {
+    max-height: 320px;
+  }
+  @include desktop {
+    max-height: 257px;
+  }
+}
+
+.ContactInfo {
+  padding: 20px;
+}
+
+.ContactName {
+  margin-bottom: 8px;
+
+  @include font(700, 12px, 15px);
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $primary-text-color;
+}
+
+.ContactRule {
+  margin-bottom: 8px;
+
+  @include font(400, 10px, 12px);
+
+  letter-spacing: 0.04em;
+  color: $secondary-text-color;
+}
+
+.ContactAbout {
+  margin-bottom: 16px;
+
+  @include font(400, 12px, 15px);
+
+  letter-spacing: 0.04em;
+  color: $primary-text-color;
+}
+
+.ContactSocialList {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.ContactSocialListIcon {
+  width: 35px;
+  height: 35px;
+  fill: $secondary-bg-color;
+  transition: fill $main-transition;
+
+  &:hover,
+  &:focus {
+    fill: $primary-success-color;
+  }
+}

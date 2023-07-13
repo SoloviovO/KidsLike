@@ -1,0 +1,15 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.HeaderBox {
+  background-color: $primary-bg-color;
+  box-shadow: $button-shadow;
+}
+
+.HeaderWrapper {
+  padding: 22px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

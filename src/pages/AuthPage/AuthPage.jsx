@@ -3,20 +3,20 @@ import React from 'react';
 import AuthForm from 'components/Auth/AuthForm/AuthForm';
 import AuthPhotos from 'components/Auth/AuthPhotos/AuthPhotos';
 
-import { AuthWrapper, FormBox } from './AuthPage.styled';
-import { Container } from '../../components/App.styled';
+import style from './AuthPage.module.scss';
+import styles from '../../components/App.module.scss';
 
 const AuthPage = () => {
   return (
     <>
-      <Container>
-        <AuthWrapper>
+      <div className={styles.Container}>
+        <div className={style.AuthWrapper}>
           <AuthPhotos />
-          <FormBox>
+          <div className={style.FormBox}>
             <AuthForm />
-          </FormBox>
-        </AuthWrapper>
-      </Container>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

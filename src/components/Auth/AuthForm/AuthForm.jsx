@@ -4,18 +4,7 @@ import { toast } from 'react-toastify';
 
 import { logInUser, registerUser } from 'redux/Auth/AuthOperations';
 
-import {
-  FormButton,
-  FormInputEmail,
-  FormInputPassword,
-  FormLabel,
-  FormTitle,
-  FormValidError,
-  LabelBox,
-  LabelRequired,
-  PageForm,
-  PageTitle,
-} from './AuthForm.stuled';
+import style from './AuthForm.module.scss';
 
 const AuthForm = () => {
   const [email, setEmail] = useState('');
@@ -95,17 +84,20 @@ const AuthForm = () => {
 
   return (
     <>
-      <PageTitle>Do your homework, get some great prizes!</PageTitle>
-      <PageForm>
-        <FormTitle>
+      <h2 className={style.AuthTitle}>
+        Do your homework, get some great prizes!
+      </h2>
+      <form className={style.PageForm}>
+        <h3 className={style.FormTitle}>
           Log in with e-mail and password after registering:
-        </FormTitle>
-        <FormLabel>
-          <LabelBox>
-            <LabelRequired>*</LabelRequired>
+        </h3>
+        <label className={style.FormLabel}>
+          <div className={style.LabelBox}>
+            <span className={style.LabelRequired}>*</span>
             Email:
-          </LabelBox>
-          <FormInputEmail
+          </div>
+          <input
+            className={style.FormInputEmail}
             placeholder="your@email.com
             "
             onChange={handleChange}
@@ -114,14 +106,17 @@ const AuthForm = () => {
             name="email"
             required
           />
-          {emailError && <FormValidError>{emailError}</FormValidError>}
-        </FormLabel>
-        <FormLabel>
-          <LabelBox>
-            <LabelRequired>*</LabelRequired>
+          {emailError && (
+            <div className={style.FormValidError}>{emailError}</div>
+          )}
+        </label>
+        <label className={style.FormLabel}>
+          <div className={style.LabelBox}>
+            <span className={style.LabelRequired}>*</span>
             Password:
-          </LabelBox>
-          <FormInputPassword
+          </div>
+          <input
+            className={style.FormInputPassword}
             placeholder="••••••••"
             onChange={handleChange}
             value={password}
@@ -129,15 +124,25 @@ const AuthForm = () => {
             name="password"
             required
           />
-          {passwordError && <FormValidError>{passwordError}</FormValidError>}
-        </FormLabel>
-        <FormButton type="button" onClick={handleLogIn}>
+          {passwordError && (
+            <div className={style.FormValidError}>{passwordError}</div>
+          )}
+        </label>
+        <button
+          className={style.FormButton}
+          type="button"
+          onClick={handleLogIn}
+        >
           Log In
-        </FormButton>
-        <FormButton type="button" onClick={handleRegistration}>
+        </button>
+        <button
+          className={style.FormButton}
+          type="button"
+          onClick={handleRegistration}
+        >
           Register
-        </FormButton>
-      </PageForm>
+        </button>
+      </form>
     </>
   );
 };

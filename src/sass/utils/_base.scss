@@ -1,6 +1,6 @@
-@import-normalize; /* bring in normalize.css styles */
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -19,8 +19,12 @@ code {
 h1,
 h2,
 h3,
+h4,
+h5,
+h6,
 p {
   margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -43,4 +47,5 @@ a {
 
 button {
   cursor: pointer;
+  padding: 0;
 }

@@ -1,52 +1,41 @@
 import React from 'react';
+import { ImGithub, ImLinkedin, ImMail4, ImTelegram } from 'react-icons/im';
 
-import {
-  ContactAbout,
-  ContactGit,
-  ContactImg,
-  ContactInfo,
-  ContactLinkedin,
-  ContactMail,
-  ContactName,
-  ContactRule,
-  ContactSocialList,
-  ContactTelegtam,
-  ContactItems,
-} from 'components/Contact/ContactItem/ContactItem.styled';
+import style from './ContactItem.module.scss';
 
 const ContactItem = ({ item }) => {
   return (
     <>
-      <ContactItems>
-        <ContactImg src={item.photo} alt={item.name} />
-        <ContactInfo>
-          <ContactName>{item.name}</ContactName>
-          <ContactRule>{item.position}</ContactRule>
-          <ContactAbout>{item.about}</ContactAbout>
-          <ContactSocialList>
+      <li className={style.ContactItems}>
+        <img className={style.ContactImg} src={item.photo} alt={item.name} />
+        <div className={style.ContactInfo}>
+          <p className={style.ContactName}>{item.name}</p>
+          <p className={style.ContactRule}>{item.position}</p>
+          <p className={style.ContactAbout}>{item.about}</p>
+          <ul className={style.ContactSocialList}>
             <li>
               <a href={item.socialLinks.email}>
-                <ContactMail />
+                <ImMail4 className={style.ContactSocialListIcon} />
               </a>
             </li>
             <li>
               <a href={item.socialLinks.gitHub} target="blanc">
-                <ContactGit />
+                <ImGithub className={style.ContactSocialListIcon} />
               </a>
             </li>
             <li>
               <a href={item.socialLinks.telegram}>
-                <ContactTelegtam />
+                <ImTelegram className={style.ContactSocialListIcon} />
               </a>
             </li>
             <li>
               <a href={item.socialLinks.linkedIn} target="blanc">
-                <ContactLinkedin />
+                <ImLinkedin className={style.ContactSocialListIcon} />
               </a>
             </li>
-          </ContactSocialList>
-        </ContactInfo>
-      </ContactItems>
+          </ul>
+        </div>
+      </li>
     </>
   );
 };

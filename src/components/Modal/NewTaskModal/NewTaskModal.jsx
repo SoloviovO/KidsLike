@@ -5,12 +5,13 @@ import { createPortal } from 'react-dom';
 import { RxCross1 } from 'react-icons/rx';
 import { toast } from 'react-toastify';
 
-import { Backdrop, CloseButton, Modal } from './NewTaskModal.styled';
-
-import modalRobot from 'images/modal-robot.png';
+import modalRobot from 'images/modal-img/modal-robot.png';
+import modalRobotRet from 'images/modal-img/modal-robot-2x.png';
 import modalImage from 'images/modal-image.svg';
 import modalEditInput from 'images/edit-log.svg';
 import { createTask } from 'redux/Planning/PlanningOperations';
+
+import style from '../ModalLogout/ModalLogout.module.scss';
 
 const modalEl = document.querySelector('#modal-root');
 
@@ -99,23 +100,30 @@ const NewTaskModal = ({ onClose }) => {
   }, [isModalOpen]);
 
   return createPortal(
-    <Backdrop
-      className={`${isModalOpen ? 'Open' : ''}`}
+    <div
+      className={`${style.Backdrop} ${isModalOpen ? style.Open : ''}`}
       onClick={handleBackdropClick}
       tabIndex={-1}
       ref={modalRef}
     >
-      <Modal className={`${isModalOpen ? 'Open' : ''}`} tabIndex={0}>
-        <CloseButton
+      <div
+        className={`${style.Modal} ${isModalOpen ? style.Open : ''}`}
+        tabIndex={0}
+      >
+        <button
           aria-label="Закрити"
           type="button"
-          className="CloseButton"
+          className={style.CloseButton}
           onClick={handleClose}
         >
-          <RxCross1 className="CloseIcon" />
-        </CloseButton>
+          <RxCross1 className={style.CloseButtonIcon} />
+        </button>
         <div>
-          <img src={modalRobot} alt="modal robo" />
+          <picture>
+            <source srcSet={`${modalRobot}, ${modalRobotRet} 2x`} />
+            <img src={modalRobot} alt="modal robo" />
+          </picture>
+
           <button type="button" onClick={() => imageInputRef.current?.click()}>
             <img src={modalImage} alt="file" />
           </button>
@@ -151,8 +159,8 @@ const NewTaskModal = ({ onClose }) => {
             <button type="submit">Ок</button>
           </form>
         </div>
-      </Modal>
-    </Backdrop>,
+      </div>
+    </div>,
     modalEl
   );
 };

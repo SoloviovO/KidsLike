@@ -1,0 +1,179 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.AuthTitle {
+  margin-bottom: 35px;
+
+  @include font(600, 18px, 22px);
+
+  color: $primary-text-color;
+  text-align: center;
+
+  @include tablet {
+    margin-bottom: 32px;
+
+    @include font(600, 28px, 34px);
+  }
+
+  @include desktop {
+    @include font(600, 30px, 37px);
+
+    text-align: start;
+  }
+}
+
+.PageForm {
+  @include tablet {
+    padding: 40px 32px;
+
+    background: $primary-bg-color;
+    box-shadow: $main-shadow;
+    border-radius: 6px;
+  }
+  @include desktop {
+    padding: 40px;
+  }
+}
+
+.FormTitle {
+  margin-bottom: 35px;
+
+  @include font(400, 12px, 15px);
+
+  letter-spacing: 0.04em;
+  color: $secondary-text-color;
+}
+
+.FormLabel {
+  margin-bottom: 24px;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include font(400, 12px, 15px);
+
+  letter-spacing: 0.04em;
+  color: $secondary-text-color;
+}
+
+.LabelBox {
+  display: inline-block;
+}
+
+.LabelRequired {
+  @include font(400, 12px, 15px);
+
+  letter-spacing: 0.04em;
+  color: $error-text-color;
+}
+
+.FormInputEmail {
+  padding: 12px 22px 12px 8px;
+
+  display: block;
+  border: none;
+  outline: none;
+
+  @include font(400, 14px, 17px);
+
+  letter-spacing: 0.04em;
+  color: $secondary-text-color;
+  background: $subsidiary-bg-color;
+  box-shadow: $input-shadow;
+  transition: outline $main-transition;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: solid 1px $secondary-bg-color;
+  }
+}
+
+.FormInputPassword {
+  padding: 12px 22px 12px 8px;
+
+  display: block;
+  border: none;
+  outline: none;
+
+  @include font(400, 14px, 17px);
+
+  letter-spacing: 0.04em;
+  color: $secondary-text-color;
+  background: $subsidiary-bg-color;
+  box-shadow: $input-shadow;
+  transition: outline $main-transition;
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: solid 1px $secondary-bg-color;
+  }
+
+  &::placeholder {
+    margin-right: 12px;
+
+    position: absolute;
+    bottom: 4px;
+
+    @include font(400, 28px, 54px);
+
+    display: flex;
+    align-items: center;
+
+    color: $primary-text-color;
+  }
+}
+
+.FormValidError {
+  position: absolute;
+  bottom: -15px;
+
+  @include font(400, 10px, 12px);
+
+  letter-spacing: 0.04em;
+  color: $error-text-color;
+}
+
+.FormButton {
+  padding: 0;
+
+  width: 135px;
+  height: 48px;
+  border: none;
+  background-color: $secondary-bg-color;
+  border-radius: 6px;
+
+  @include font(500, 12px, 15px);
+
+  letter-spacing: 0.02em;
+  color: $main-content-bg-color;
+  filter: drop-shadow($button-shadow);
+
+  @include tablet {
+    width: 160px;
+  }
+  @include desktop {
+    width: 153px;
+  }
+
+  transition: background-color $main-transition;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-success-color;
+  }
+
+  &:not(:last-child) {
+    margin-right: 10px;
+
+    @include tablet {
+      margin-right: 16px;
+    }
+    @include desktop {
+      margin-right: 8px;
+    }
+  }
+}
