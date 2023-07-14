@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/KidsLike/static/css/main.604cec32.css",
-    "main.js": "/KidsLike/static/js/main.8051f081.js",
+    "main.css": "/KidsLike/static/css/main.bf93246b.css",
+    "main.js": "/KidsLike/static/js/main.5d7a527a.js",
     "static/media/Clean-2x.png": "/KidsLike/static/media/Clean-2x.29b04722ee1785bf195c.png",
     "static/media/Clean-girl-2x.png": "/KidsLike/static/media/Clean-girl-2x.bea3eb5ddc0f4b735f0a.png",
     "static/media/desk-2x.png": "/KidsLike/static/media/desk-2x.0ad1772df6f1d88ceb9b.png",
@@ -24,19 +24,20 @@
     "static/media/modal-image.svg": "/KidsLike/static/media/modal-image.10e657f4f3ba37b3b704615d4900675e.svg",
     "static/media/icon-ok.svg": "/KidsLike/static/media/icon-ok.562cc73c315c8e86f34dd511fad546a0.svg",
     "static/media/logout.svg": "/KidsLike/static/media/logout.2381a02bfe7bd992d070afb753c6b2a7.svg",
-    "static/media/attention.svg": "/KidsLike/static/media/attention.067b9d16c0c326cef3da2deb6cc7a4a1.svg",
     "index.html": "/KidsLike/index.html",
-    "static/media/checked.svg": "/KidsLike/static/media/checked.08850ceca998a68bb92da310348579af.svg",
     "static/media/icon-add.svg": "/KidsLike/static/media/icon-add.61f9508196374989e72fd0b709711199.svg",
     "static/media/unsuccess.svg": "/KidsLike/static/media/unsuccess.c0efb71adf2e4a6b3c4e8f9c521935b6.svg",
     "static/media/icon-addTasks.svg": "/KidsLike/static/media/icon-addTasks.e8b3a16718d1d622d07602b3df90c412.svg",
+    "static/media/attention.svg": "/KidsLike/static/media/attention.5e1ab02a2755314d220c9148d23d06f5.svg",
     "static/media/edit-log.svg": "/KidsLike/static/media/edit-log.402fb7f9fbfcc440d8313715473a1108.svg",
+    "static/media/checked.svg": "/KidsLike/static/media/checked.1f22711357b64d9d7ee752dfd49d40c4.svg",
     "static/media/success.svg": "/KidsLike/static/media/success.f9703a50cdd4623dcd0184a41f444588.svg",
-    "main.604cec32.css.map": "/KidsLike/static/css/main.604cec32.css.map",
-    "main.8051f081.js.map": "/KidsLike/static/js/main.8051f081.js.map"
+    "static/media/icon-choice.svg": "/KidsLike/static/media/icon-choice.dbc72040a02e3130b173.svg",
+    "main.bf93246b.css.map": "/KidsLike/static/css/main.bf93246b.css.map",
+    "main.5d7a527a.js.map": "/KidsLike/static/js/main.5d7a527a.js.map"
   },
   "entrypoints": [
-    "static/css/main.604cec32.css",
-    "static/js/main.8051f081.js"
+    "static/css/main.bf93246b.css",
+    "static/js/main.5d7a527a.js"
   ]
 }
