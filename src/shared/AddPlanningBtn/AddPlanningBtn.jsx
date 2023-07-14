@@ -9,6 +9,8 @@ import Loader from 'shared/Loader/Loader';
 import { addTaskToProvidedDays } from 'redux/Planning/PlanningOperations';
 import { selectDaysList } from 'redux/Planning/PlanningSelectors';
 
+import style from './AddPlanningBtn.module.scss';
+
 const AddPlanningBtn = ({ _id }) => {
   const daysList = useSelector(
     state => selectDaysList(state, _id),
@@ -63,10 +65,18 @@ const AddPlanningBtn = ({ _id }) => {
         />
       )}
 
-      <button type="button" onClick={handleIconAddClick}>
+      <button
+        className={style.AddPlanningBtn}
+        type="button"
+        onClick={handleIconAddClick}
+      >
         {show ? <IconOk /> : <IconAdd />}
       </button>
-      {isLoading && <Loader width="25" height="7" color="#3e7adc" />}
+      {isLoading && (
+        <div className={style.AddPlanningLoader}>
+          <Loader width="25" height="15" color="#3e7adc" />
+        </div>
+      )}
     </div>
   );
 };

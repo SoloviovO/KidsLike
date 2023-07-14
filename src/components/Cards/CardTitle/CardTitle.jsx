@@ -1,5 +1,7 @@
 import React from 'react';
 
-const CardTitle = ({ title }) => <p>{title}</p>;
+import style from './CardTitle.module.scss';
+
+const CardTitle = ({ title }) => <p className={style.CardTitle}>{title}</p>;
 
 export default CardTitle;

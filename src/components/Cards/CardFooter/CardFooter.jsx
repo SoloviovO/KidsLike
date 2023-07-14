@@ -3,12 +3,14 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import CardTitle from 'components/Cards/CardTitle/CardTitle';
-import PointAmount from 'components/PointAmount/PointAmount';
+import PointAmount from 'components/Cards/PointAmount/PointAmount';
 import TaskToggle from 'components/TaskToggle/TaskToogle';
 
 import { ReactComponent as Success } from '../../../images/success.svg';
 import { ReactComponent as UnSuccess } from '../../../images/unsuccess.svg';
 import AddPlanningBtn from 'shared/AddPlanningBtn/AddPlanningBtn';
+
+import style from './CardFooter.module.scss';
 
 const PATH_NAME = Object.freeze({
   MAIN: '/',
@@ -55,9 +57,13 @@ const CardFooter = ({ ...taskInfo }) => {
   };
   return (
     <>
-      <CardTitle title={title} />
-      <PointAmount point={reward} />
-      <>{renderElement()}</>
+      <div className={style.CardFooterBox}>
+        <div>
+          <CardTitle title={title} />
+          <PointAmount point={reward} />
+        </div>
+        <>{renderElement()}</>
+      </div>
     </>
   );
 };

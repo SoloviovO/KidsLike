@@ -1,0 +1,71 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.CheckBoxWrapp {
+  display: flex;
+  align-items: center;
+}
+
+.CheckBoxLabel {
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.CheckBoxInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.CheckBoxInput:checked ~ .CheckBoxIcon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url('../../images/icon-choice.svg');
+
+  border: 1px solid $primary-bg-color;
+  background-color: $primary-bg-color;
+}
+
+.CheckBoxIcon {
+  margin-right: 10px;
+
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  border: 1px solid $primary-bg-color;
+
+  background-color: transparent;
+  transition: background-color $main-transition;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.CheckBoxInput:disabled ~ .CheckBoxIcon {
+  background-color: transparent;
+  border: 1px solid $subsidiary-text-color;
+  cursor: not-allowed;
+}
+
+.CheckBoxInput:disabled.CheckBoxInput:checked ~ .CheckBoxIcon {
+  background-color: $subsidiary-text-color;
+  border: 1px solid $subsidiary-text-color;
+  cursor: not-allowed;
+}
+
+.CheckBoxLabel:has(.CheckBoxInput:disabled) {
+  color: $subsidiary-text-color;
+  cursor: not-allowed;
+}

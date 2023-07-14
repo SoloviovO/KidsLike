@@ -1,10 +1,13 @@
 import React from 'react';
 
+import style from './CheckBox.module.scss';
+
 const CheckBox = ({ value, label, checked, _id, onChange, disabled }) => {
   return (
-    <div>
-      <label htmlFor={_id}>
+    <div className={style.CheckBoxWrapp}>
+      <label className={style.CheckBoxLabel} htmlFor={_id}>
         <input
+          className={style.CheckBoxInput}
           id={_id}
           name={_id}
           type="checkbox"
@@ -13,7 +16,7 @@ const CheckBox = ({ value, label, checked, _id, onChange, disabled }) => {
           onChange={onChange}
           disabled={disabled}
         />
-        <span></span>
+        <span className={style.CheckBoxIcon}></span>
         {label}
       </label>
     </div>

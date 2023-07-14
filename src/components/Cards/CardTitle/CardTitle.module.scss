@@ -1,0 +1,11 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.CardTitle {
+  margin-bottom: 4px;
+
+  @include font(700, 12px, 15px);
+
+  text-transform: uppercase;
+  letter-spacing: 0.48px;
+}

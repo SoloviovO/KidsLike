@@ -1,7 +1,9 @@
 import React from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import classNames from 'classnames';
 
 import { selectDates } from 'redux/Auth/AuthSelectors';
 import { toggleTaskStatus } from 'redux/Planning/PlanningOperations';
@@ -10,7 +12,9 @@ import { ReactComponent as Check } from '../../images/checked.svg';
 import { ReactComponent as Attention } from '../../images/attention.svg';
 import { selectGifts } from 'redux/Awards/AwardsSelectors';
 import { toggleSelectGift } from 'redux/Awards/AwardsSlice';
-import { useLocation } from 'react-router-dom';
+import Loader from 'shared/Loader/Loader';
+
+import style from './TaskToggle.module.scss';
 
 const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -51,17 +55,28 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   };
   return (
     <>
-      <label htmlFor={_id}>
+      <label className={style.TaskToggleLabel} htmlFor={_id}>
         <input
+          className={style.TaskToggleInput}
           id={_id}
           type="checkbox"
           onChange={handleToggleChange}
           checked={isSelected || isCompleted}
         />
-        {isLoading && <div>Loader</div>}
-        <span>
-          <Check width="10" height="10" />
-          <Attention width="5" height="12" />
+        {isLoading && (
+          <div className={style.TaskToggleLoader}>
+            <Loader height="25" color="#5679D7" />
+          </div>
+        )}
+        <span
+          className={classNames(style.TaskToggleSlider, style.TaskToggleRound)}
+        >
+          <Check className={style.TaskToggleChecked} width="10" height="10" />
+          <Attention
+            className={style.TaskToggleAttention}
+            width="5"
+            height="12"
+          />
         </span>
       </label>
     </>
