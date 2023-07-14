@@ -1,0 +1,39 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.CardList {
+  width: 280px;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+
+  @include tablet {
+    width: 704px;
+  }
+
+  @include desktop {
+    width: 1248px;
+  }
+}
+
+.CardListItem {
+  flex-basis: 280px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform $main-transition;
+  filter: drop-shadow($main-shadow);
+
+  @include tablet {
+    flex-basis: 336px;
+  }
+
+  @include desktop {
+    flex-basis: 288px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+  }
+}

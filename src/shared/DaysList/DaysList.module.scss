@@ -1,0 +1,20 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.DayListBox {
+  position: absolute;
+  top: -225px;
+  right: 0;
+
+  height: 228px;
+  padding: 13px 35px 11px 33px;
+  border-radius: 6px;
+  background-color: $card-bg-color;
+  color: $primary-bg-color;
+}
+
+.DayList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
