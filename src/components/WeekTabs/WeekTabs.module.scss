@@ -1,0 +1,109 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.WeekListWrapper {
+  display: flex;
+
+  justify-content: center;
+  padding: 20px 0;
+
+  @include tablet {
+    padding: 22px;
+
+    justify-content: center;
+    align-items: center;
+    background-color: $secondary-bg-color;
+  }
+
+  @include desktop {
+    padding: 140px 0 0;
+
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 229px;
+    height: 100vh;
+  }
+}
+
+.WeekList {
+  display: flex;
+  align-items: center;
+
+  @include desktop {
+    display: block;
+    padding-left: 48px;
+  }
+}
+
+.WeekListItem:not(:last-child) {
+  margin-right: 4px;
+
+  @include tablet {
+    margin-right: 16px;
+  }
+
+  @include desktop {
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+}
+
+.WeekListInput {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+
+  &:checked + .WeekListLabel {
+    background-color: $secondary-bg-color;
+  }
+
+  @include tablet {
+    &:checked + .WeekListLabel {
+      background-color: $primary-bg-color;
+    }
+  }
+}
+
+.WeekListLabel {
+  padding: 0 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  width: 35px;
+  height: 24px;
+  background-color: $week-bg-color;
+
+  @include tablet {
+    width: 40px;
+    height: 26px;
+    background-color: $week-secondary-bg-color;
+  }
+
+  @include desktop {
+    width: 181px;
+    height: 42px;
+    border-radius: 6px 0px 0px 6px;
+    background-color: $week-secondary-bg-color;
+  }
+}
+
+.WeekListTitle {
+  @include font(700, 12px, 15px);
+
+  letter-spacing: 0.48px;
+  color: $primary-text-color;
+
+  @include tablet {
+    width: 26px;
+  }
+
+  @include desktop {
+    padding-left: 20px;
+
+    @include font(700, 14px, 18px);
+  }
+}
