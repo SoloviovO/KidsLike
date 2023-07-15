@@ -8,7 +8,7 @@ import { selectDates } from 'redux/Auth/AuthSelectors';
 import Footer from 'shared/Footer/Footer';
 
 import styles from '../../components/App.module.scss';
-import { MainBox, MainWrapper } from './MainPage.styled';
+import style from './MainPage.module.scss';
 
 const MainPage = () => {
   const dates = useSelector(selectDates, shallowEqual);
@@ -23,13 +23,13 @@ const MainPage = () => {
   return (
     <>
       <div className={styles.Container}>
-        <MainWrapper>
+        <div className={style.MainWrapper}>
           <WeekTabs weekDays={weekDays} />
-          <MainBox>
+          <div className={style.MainBox}>
             <WeekTabContent selectedDate={dates[selectedDay]} />
             <Footer />
-          </MainBox>
-        </MainWrapper>
+          </div>
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,28 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.MainWrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+.MainBox {
+  padding-top: 32px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-bg-color;
+
+  @include tablet {
+    padding-top: 40px;
+
+    background-color: $main-content-bg-color;
+  }
+}
