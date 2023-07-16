@@ -1,0 +1,21 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.TitleBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.Title {
+  text-transform: uppercase;
+  @include font(700, 14px, 18px);
+
+  letter-spacing: 2.8px;
+}

@@ -1,0 +1,23 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.Button {
+  width: 220px;
+  height: 48px;
+  border: none;
+  background-color: $secondary-bg-color;
+  border-radius: 6px;
+
+  @include font(500, 12px, 15px);
+
+  letter-spacing: 0.02em;
+  color: $main-content-bg-color;
+  filter: drop-shadow($button-shadow);
+
+  transition: background-color $main-transition;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-success-color;
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.AwardBox {
+  padding: 20px 0 20px 0;
+
+  @include tablet {
+    padding: 40px 0 40px 0;
+  }
+}
+
+.AwardTitleBox {
+  margin-bottom: 36px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+
+  @include desktop {
+    margin-bottom: 45px;
+  }
+}
+
+.CardListBox {
+  margin-bottom: 40px;
+
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+
+.ButtonBox {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+
+  @include desktop {
+    margin-bottom: 15px;
+  }
+}
+
+.FooterBox {
+  display: flex;
+  justify-content: center;
+
+  @include desktop {
+    justify-content: flex-end;
+  }
+}

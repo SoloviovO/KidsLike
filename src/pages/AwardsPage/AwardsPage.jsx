@@ -14,6 +14,10 @@ import { refreshBoughtGiftsIds } from 'redux/Awards/AwardsSlice';
 import AwardsTitle from 'components/Awards/AwardsTitle/AwardsTitle';
 import AwardsSubmitButton from 'components/Awards/AwardsSubmitButton/AwardsSubmitButton';
 import CongratsModal from 'components/Modal/CongratsModal/CongratsModal';
+import CardListLoader from 'shared/CardLoader/CardLoader';
+
+import styles from '../../components/App.module.scss';
+import style from './AwardsPage.module.scss';
 
 const AwardsPage = () => {
   const boughtGiftsIds = useSelector(selectBoughtGiftsIds, shallowEqual);
@@ -80,18 +84,24 @@ const AwardsPage = () => {
 
   return (
     <>
-      <div>
-        <AwardsTitle />
-        {gifts.length ? <CardList tasks={gifts} /> : <div>Loader</div>}
-        <div>
-          <AwardsSubmitButton buyHandler={buyHandler} />
+      <div className={styles.Container}>
+        <div className={style.AwardBox}>
+          <div className={style.AwardTitleBox}>
+            <AwardsTitle />
+          </div>
+          <div className={style.CardListBox}>
+            {gifts.length ? <CardList tasks={gifts} /> : <CardListLoader />}
+          </div>
+          <div className={style.ButtonBox}>
+            <AwardsSubmitButton buyHandler={buyHandler} />
+          </div>
+          {open && (
+            <CongratsModal awards={dataForModal} onClose={handleModalClose} />
+          )}
+          <div className={style.FooterBox}>
+            <Footer />
+          </div>
         </div>
-        {open && (
-          <CongratsModal awards={dataForModal} onClose={handleModalClose} />
-        )}
-      </div>
-      <div>
-        <Footer />
       </div>
     </>
   );

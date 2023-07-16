@@ -31,7 +31,7 @@ const WeekTabs = ({ weekDays }) => {
   return (
     <>
       <div className={style.WeekListWrapper}>
-        {weekDays ? (
+        {weekDays.length ? (
           <ul className={style.WeekList}>
             {weekDays.map(day => (
               <li className={style.WeekListItem} key={day}>
@@ -53,7 +53,9 @@ const WeekTabs = ({ weekDays }) => {
             ))}
           </ul>
         ) : (
-          <Loader width="230" color="#5679D7" />
+          <div className={style.LoaderWrapper}>
+            <Loader width="100" color="#5679D7" />
+          </div>
         )}
       </div>
     </>
