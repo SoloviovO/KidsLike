@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { Progress } from 'react-sweet-progress';
 import 'react-sweet-progress/lib/style.css';
 
@@ -8,7 +9,16 @@ import {
   selectRewardsPlanned,
 } from 'redux/Planning/PlanningSelectors';
 
+import style from './ProgressBar.module.scss';
+
+const PATH_NAME = Object.freeze({
+  MAIN: '/',
+  PLANNING: '/planning',
+  AWARD: '/awards',
+});
+
 const ProgressBar = () => {
+  const { pathname } = useLocation();
   const points = useSelector(selectRewardsGained || 0, shallowEqual);
   const plannedPoints = useSelector(selectRewardsPlanned || 0, shallowEqual);
 
@@ -16,31 +26,47 @@ const ProgressBar = () => {
 
   return (
     <>
-      <div>
-        <p>
+      <div className={style.ProgressWrapper}>
+        <p
+          className={
+            pathname === PATH_NAME.AWARD
+              ? style.PointsTextAwards
+              : style.PointsTextAwards
+          }
+        >
           Points earned this week:
-          <span>{points}</span>
+          <span className={style.PointsAmount}>{points}</span>
         </p>
-        <p>
+        <p
+          className={
+            pathname === PATH_NAME.AWARD
+              ? style.PointsTextAwards
+              : style.PointsTextAwards
+          }
+        >
           Planned points for this week:
-          <span>{plannedPoints}</span>
+          <span className={style.PointsAmount}>{plannedPoints}</span>
         </p>
-        <div>
-          <span>
-            <span>{points}</span> / {plannedPoints}
+        <div className={style.ProgressBox}>
+          <span className={style.PointAmount}>
+            <span className={style.PlannedPoints}>{points}</span> /{' '}
+            {plannedPoints}
           </span>
-          <div>
+          <div className={style.ProgressTool}>
             <Progress
               percent={points ? (percent >= 100 ? 100 : percent) : 0}
               theme={{
                 success: {
+                  symbol: ' ',
                   color: 'rgb(223, 105, 180)',
                 },
                 active: {
-                  color: '#fbc630',
+                  symbol: ' ',
+                  color: '#8ec63f',
                 },
                 default: {
-                  color: '#fbc630',
+                  symbol: ' ',
+                  color: '#8ec63f',
                 },
               }}
             />
