@@ -1,0 +1,10 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.BurgerMenu {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}

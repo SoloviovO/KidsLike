@@ -1,18 +1,19 @@
-import { Route, Routes } from 'react-router-dom';
-import { useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
-import AuthPage from 'pages/AuthPage/AuthPage';
-import AwardsPage from 'pages/AwardsPage/AwardsPage';
-import ContactsPage from 'pages/ContactsPage/ContactsPage';
-import MainPage from 'pages/MainPage/MainPage';
-import PlanningPage from 'pages/PlanningPage/PlanningPage';
-import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
+import { Route, Routes } from 'react-router-dom';
 
 import { currentUserInfo } from 'redux/Auth/AuthOperations';
+import Header from '../shared/Header/Header';
+
 import { PrivateRoute } from '../shared/PrivateRoute/PrivateRoute';
 import { PublicRoute } from '../shared/PublicRoute/PublicRoute';
-import Header from '../shared/Header/Header';
+
+const AuthPage = lazy(() => import('../pages/AuthPage/AuthPage'));
+const AwardsPage = lazy(() => import('../pages/AwardsPage/AwardsPage'));
+const MainPage = lazy(() => import('../pages/MainPage/MainPage'));
+const PlanningPage = lazy(() => import('../pages/PlanningPage/PlanningPage'));
+const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -23,45 +24,46 @@ export const App = () => {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Header />}>
-          <Route
-            index
-            // path="/main"
-            element={
-              <PrivateRoute>
-                <MainPage />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/auth"
-            element={
-              <PublicRoute>
-                <AuthPage />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="/planning"
-            element={
-              <PrivateRoute>
-                <PlanningPage />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/awards"
-            element={
-              <PrivateRoute>
-                <AwardsPage />
-              </PrivateRoute>
-            }
-          />
-          <Route path="/contacts" element={<ContactsPage />} />
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={null}>
+        <Routes>
+          <Route path="/" element={<Header />}>
+            <Route
+              index
+              element={
+                <PrivateRoute>
+                  <MainPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/auth"
+              element={
+                <PublicRoute>
+                  <AuthPage />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/planning"
+              element={
+                <PrivateRoute>
+                  <PlanningPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/awards"
+              element={
+                <PrivateRoute>
+                  <AwardsPage />
+                </PrivateRoute>
+              }
+            />
+            <Route path="/contacts" element={<ContactsPage />} />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };

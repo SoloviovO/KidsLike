@@ -15,15 +15,17 @@ function Header() {
 
   return (
     <>
-      <div className={style.HeaderBox}>
+      <header className={style.HeaderBox}>
         <div className={styles.Container}>
           <div className={style.HeaderWrapper}>
             <Logo />
-            {isLoggedIn && <UserScore />}
+            <div className={style.UserScoreBox}>
+              {isLoggedIn && <UserScore />}
+            </div>
             <Navigation />
           </div>
         </div>
-      </div>
+      </header>
 
       <Outlet />
     </>

@@ -1,1 +1,134 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
 
+.Container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.BurgerMenuBox {
+  margin-left: auto;
+
+  @include tablet {
+    margin-right: 32px;
+    margin-left: auto;
+  }
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.BurgerMenuNavigation {
+  display: none;
+
+  @include desktop {
+    margin-right: 40px;
+    margin-left: auto;
+
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+}
+
+.BurgerMenuLink {
+  @include font(500, 12px, 15px);
+  text-decoration: none;
+  color: $secondary-text-color;
+
+  letter-spacing: 0.48px;
+}
+
+.BurgerBox {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.BurgerModalNav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+
+  background: $backdrop-color;
+
+  @include desktop {
+    background-color: transparent;
+  }
+}
+
+.BurgerModalNavBox {
+  padding-top: 14px;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 274px;
+  height: 100vh;
+
+  background-color: $secondary-bg-color;
+  box-shadow: -15px 0px 20px $backdrop-color;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.BurgerMenuClose {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.BurgerMenuWrapper {
+  padding-left: 20px;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.BurgerMenuNavMob {
+  padding-top: 80px;
+}
+
+.BurgerMenuLinkMob {
+  padding: 14px 0 14px 20px;
+
+  @include font(500, 12px, 15px);
+
+  display: block;
+  text-decoration: none;
+  color: $primary-bg-color;
+  letter-spacing: 0.48px;
+  width: 100%;
+  border-top: 1px solid $primary-bg-color;
+  transition: color $main-transition;
+
+  &:hover {
+    color: $primary-text-color;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $primary-bg-color;
+  }
+}

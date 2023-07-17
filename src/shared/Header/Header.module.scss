@@ -13,3 +13,11 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.UserScoreBox {
+  margin-left: 40px;
+
+  @include desktop {
+    margin-left: 130px;
+  }
+}
