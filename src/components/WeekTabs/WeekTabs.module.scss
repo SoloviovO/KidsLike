@@ -2,26 +2,27 @@
 @import '../../sass/utils/mixins';
 
 .WeekListWrapper {
-  display: flex;
+  margin-bottom: 20px;
 
+  display: flex;
   justify-content: center;
-  padding: 20px 0;
+  align-items: center;
 
   @include tablet {
+    margin-bottom: 40px;
     padding: 22px;
 
-    justify-content: center;
-    align-items: center;
     background-color: $secondary-bg-color;
   }
 
   @include desktop {
     padding: 140px 0 0;
+    margin-bottom: 0;
 
     justify-content: flex-start;
     flex-direction: column;
     width: 229px;
-    height: 100vh;
+    height: auto;
   }
 }
 

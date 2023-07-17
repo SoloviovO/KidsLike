@@ -1,0 +1,46 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.WeekTabWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  @include tablet {
+    gap: 20px;
+  }
+
+  @include desktop {
+    padding-left: 107px;
+    padding-right: 16px;
+
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.NoTaskWrapper {
+  padding-top: 60px;
+
+  @include tablet {
+    padding-top: 100px;
+  }
+}
+
+.CardListWrapper {
+  padding: 30px 20px 0 20px;
+  margin-bottom: 40px;
+
+  display: flex;
+
+  @include tablet {
+    padding: 40px 32px 0 32px;
+  }
+
+  @include desktop {
+    padding: 40px 0 0 107px;
+
+    width: 1051px;
+  }
+}

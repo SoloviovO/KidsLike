@@ -1,5 +1,7 @@
 import React from 'react';
 
+import style from './CurrentDay.module.scss';
+
 const CurrentDay = ({ selectedDate }) => {
   const getCurrentDay = date => {
     if (!date) {
@@ -19,9 +21,9 @@ const CurrentDay = ({ selectedDate }) => {
   const currentDay = getCurrentDay(selectedDate)?.toUpperCase();
   return (
     <>
-      <p>
+      <p className={style.CurrentDayTitle}>
         My tasks:
-        <span>{currentDay}</span>
+        <span className={style.CurrentDayText}>{currentDay}</span>
       </p>
     </>
   );

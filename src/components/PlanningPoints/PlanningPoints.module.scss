@@ -1,0 +1,138 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.PlanPointsBox {
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.PlanWeekBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  @include tablet {
+    margin: 0 0 20px 0;
+
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  @include desktop {
+    margin: 0 138px 0 0;
+  }
+}
+
+.PlanWeekTaskBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $points-bg-color;
+  width: 100vw;
+  height: 58px;
+
+  @include tablet {
+    position: static;
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 200px;
+  }
+}
+
+.PlanWeekText {
+  @include font(400, 18px, 22px);
+
+  letter-spacing: 0.72px;
+}
+
+.PlanWeekDate {
+  padding: 7px 15px;
+
+  @include font(700, 12px, 15px);
+
+  letter-spacing: 2.4px;
+  border: 1px solid $secondary-bg-color;
+  border-radius: 6px;
+
+  @include desktop {
+    padding: 0;
+
+    border: none;
+  }
+}
+
+.PlanWeekPointTextB {
+  display: none;
+  @include tablet {
+    display: inline-block;
+
+    @include font(500, 12px, 15px);
+
+    text-align: right;
+    letter-spacing: 0.48px;
+
+    color: $subsidiary-text-color;
+  }
+}
+
+.PlanWeekPointText {
+  margin-left: 8px;
+
+  @include font(500, 12px, 15px);
+
+  text-align: right;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  color: $subsidiary-text-color;
+
+  @include tablet {
+    text-transform: none;
+  }
+}
+
+.PointsBox {
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    justify-content: center;
+  }
+}
+
+.PlannedPoint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  min-height: 30px;
+
+  @include font(700, 14px, 18px);
+
+  letter-spacing: 0.48px;
+  background-color: $primary-success-color;
+  color: $primary-bg-color;
+  border-radius: 50%;
+
+  @include tablet {
+    margin-left: 8px;
+  }
+}

@@ -74,7 +74,7 @@ const AddPlanningBtn = ({ _id }) => {
       </button>
       {isLoading && (
         <div className={style.AddPlanningLoader}>
-          <Loader width="25" height="15" color="#3e7adc" />
+          <Loader width="25" height="15" color="#5679D7" />
         </div>
       )}
     </div>

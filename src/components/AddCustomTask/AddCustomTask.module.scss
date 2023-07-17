@@ -1,0 +1,53 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.AddTaskBox {
+  display: flex;
+  align-items: center;
+
+  @include tablet {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  @include desktop {
+    justify-content: right;
+  }
+}
+
+.AddTaskText {
+  display: none;
+
+  @include font(500, 12px, 15px);
+
+  letter-spacing: 0.48px;
+  text-align: right;
+  color: $subsidiary-text-color;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.AddTaskBtn {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  z-index: 10;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transform: scale(1);
+
+  transition: transform $main-transition;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+
+  @include tablet {
+    position: static;
+  }
+}
