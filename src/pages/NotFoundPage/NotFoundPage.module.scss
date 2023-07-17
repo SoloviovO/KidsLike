@@ -1,0 +1,72 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.NotFoundWrapper {
+  padding: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.NotFoundImage {
+  margin-bottom: 20px;
+
+  width: 80px;
+
+  @include tablet {
+    width: 160px;
+  }
+}
+
+.NoTaskTitle {
+  margin-bottom: 10px;
+
+  @include font(700, 12px, 15px);
+
+  text-align: center;
+  letter-spacing: 0.48px;
+  color: $primary-text-color;
+}
+
+.NoTaskSubTitle {
+  margin-bottom: 10px;
+
+  @include font(500, 14px, 18px);
+
+  text-align: center;
+  letter-spacing: 0.48px;
+  color: $subsidiary-text-color;
+}
+
+.NoTaskLinkBox {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+
+  text-decoration: none;
+
+  @include tablet {
+    margin-bottom: 40px;
+  }
+}
+
+.NoTaskButton {
+  width: 220px;
+  height: 48px;
+  border: none;
+  background-color: $secondary-bg-color;
+  border-radius: 6px;
+
+  @include font(500, 12px, 15px);
+
+  letter-spacing: 0.24px;
+  color: $main-content-bg-color;
+  filter: drop-shadow($button-shadow);
+
+  transition: background-color $main-transition;
+
+  &:hover,
+  &:focus {
+    background-color: $primary-success-color;
+  }
+}
