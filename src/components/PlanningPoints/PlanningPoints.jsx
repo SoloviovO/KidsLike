@@ -1,7 +1,5 @@
 import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import { Progress } from 'react-sweet-progress';
 import 'react-sweet-progress/lib/style.css';
 
 import {
@@ -15,27 +13,17 @@ import {
   selectEndWeekDate,
   selectStartWeekDate,
 } from 'redux/Auth/AuthSelectors';
-import {
-  selectRewardsGained,
-  selectRewardsPlanned,
-} from 'redux/Planning/PlanningSelectors';
+import { selectRewardsPlanned } from 'redux/Planning/PlanningSelectors';
 
-const PATH_NAME = Object.freeze({
-  MAIN: '/',
-  PLANNING: '/planning',
-  AWARD: '/awards',
-});
+import style from './PlanningPoints.module.scss';
 
 const PlanningPoints = () => {
-  const points = useSelector(selectRewardsGained || 0, shallowEqual);
   const plannedPoints = useSelector(selectRewardsPlanned || 0, shallowEqual);
   const startDate = useSelector(selectStartWeekDate, shallowEqual);
   const endDate = useSelector(selectEndWeekDate, shallowEqual);
-  const { pathname } = useLocation();
-  const percent = parseInt((points / plannedPoints) * 100);
 
   if (!startDate && !endDate) {
-    return <Loader width="229" />;
+    return <Loader width="100" color="#5679D7" />;
   }
 
   const startingDate = configuredStartDate(startDate);
@@ -43,48 +31,19 @@ const PlanningPoints = () => {
 
   return (
     <>
-      <div>
-        {pathname === PATH_NAME.PLANNING && (
-          <div>
-            <span>Plan for the week:</span>
-            <div>
-              {startingDate} <span> - </span> {endingDate}
-            </div>
+      <div className={style.PlanPointsBox}>
+        <div className={style.PlanWeekBox}>
+          <span className={style.PlanWeekText}>Plan for the week:</span>
+          <div className={style.PlanWeekDate}>
+            {startingDate} <span> - </span> {endingDate}
           </div>
-        )}
-        <div>
-          {pathname === PATH_NAME.PLANNING ? (
-            <div>
-              <span>Defined tasks for</span>
-              <div>
-                <div>{plannedPoints}</div>
-              </div>
-              <span>points</span>
-              <span>POINTS</span>
-            </div>
-          ) : (
-            <div>
-              <span>
-                <span>{points}</span> / {plannedPoints}
-              </span>
-              <div>
-                <Progress
-                  percent={points ? (percent >= 100 ? 100 : percent) : 0}
-                  theme={{
-                    success: {
-                      color: 'rgb(223, 105, 180)',
-                    },
-                    active: {
-                      color: '#fbc630',
-                    },
-                    default: {
-                      color: '#fbc630',
-                    },
-                  }}
-                />
-              </div>
-            </div>
-          )}
+        </div>
+        <div className={style.PlanWeekTaskBox}>
+          <div className={style.PointsBox}>
+            <span className={style.PlanWeekPointTextB}>Defined tasks for</span>
+            <div className={style.PlannedPoint}>{plannedPoints}</div>
+            <span className={style.PlanWeekPointText}>points</span>
+          </div>
         </div>
       </div>
     </>

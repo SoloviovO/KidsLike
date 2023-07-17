@@ -4,6 +4,8 @@ import { shallowEqual, useSelector } from 'react-redux';
 import { selectWeekRange } from 'redux/Auth/AuthSelectors';
 import Loader from 'shared/Loader/Loader';
 
+import style from './CurrentWeekRange.module.scss';
+
 const CurrentWeekRange = () => {
   const weekRange = useSelector(selectWeekRange, shallowEqual);
 
@@ -18,7 +20,7 @@ const CurrentWeekRange = () => {
   return (
     <>
       {weekRange ? (
-        <p>{getCurrentWeekRange(weekRange)}</p>
+        <p className={style.WeekRangeText}>{getCurrentWeekRange(weekRange)}</p>
       ) : (
         <Loader height="20" />
       )}

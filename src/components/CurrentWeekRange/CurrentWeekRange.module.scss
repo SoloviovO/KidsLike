@@ -1,0 +1,20 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.WeekRangeText {
+  margin-bottom: 20px;
+
+  @include font(400, 14px, 18px);
+
+  text-align: center;
+  letter-spacing: 0.72px;
+  color: $primary-text-color;
+
+  @include desktop {
+    margin-bottom: 32px;
+
+    @include font(400, 18px, 24px);
+
+    text-align: start;
+  }
+}

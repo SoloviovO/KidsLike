@@ -6,6 +6,7 @@ import {
   logOutUser,
   registerUser,
 } from './AuthOperations';
+import { toggleTaskStatus } from 'redux/Planning/PlanningOperations';
 
 const authInitialState = {
   user: {},
@@ -52,6 +53,16 @@ const authSlice = createSlice({
       })
       .addCase(currentUserInfo.rejected, state => {
         state.isLoggedIn = false;
+      })
+      .addCase(toggleTaskStatus.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(toggleTaskStatus.fulfilled, (state, { payload }) => {
+        state.user.balance = payload.updatedBalance;
+        state.isLoading = false;
+      })
+      .addCase(toggleTaskStatus.rejected, state => {
+        state.isLoading = false;
       });
   },
 });

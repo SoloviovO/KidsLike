@@ -6,8 +6,11 @@ import CurrentDay from 'components/CurrentDay/CurrentDay';
 import CurrentWeekRange from 'components/CurrentWeekRange/CurrentWeekRange';
 import NoTasks from 'components/NoTasks/NoTasks';
 import ProgressBar from 'components/ProgressBar/ProgressBar';
+import CardLoader from 'shared/CardLoader/CardLoader';
 
 import { selectDaysTasks } from 'redux/Planning/PlanningSelectors';
+
+import style from './WeekTabContent.module.scss';
 
 const WeekTabContent = ({ selectedDate }) => {
   const tasks = useSelector(
@@ -18,21 +21,31 @@ const WeekTabContent = ({ selectedDate }) => {
   let data = null;
 
   if (!tasks) {
-    data = <div>Loader</div>;
+    data = (
+      <div className={style.CardListWrapper}>
+        <CardLoader />
+      </div>
+    );
   } else {
     data = tasks.length ? (
-      <div>
+      <div className={style.CardListWrapper}>
         <CardList tasks={tasks} />
       </div>
     ) : (
-      <NoTasks />
+      <div className={style.NoTaskWrapper}>
+        <NoTasks />
+      </div>
     );
   }
   return (
     <>
-      <CurrentWeekRange />
-      <CurrentDay selectedDate={selectedDate} />
-      <ProgressBar />
+      <div className={style.WeekTabWrapper}>
+        <div>
+          <CurrentWeekRange />
+          <CurrentDay selectedDate={selectedDate} />
+        </div>
+        <ProgressBar />
+      </div>
       <div>{data}</div>
     </>
   );

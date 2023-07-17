@@ -26,24 +26,18 @@ const ProgressBar = () => {
 
   return (
     <>
-      <div className={style.ProgressWrapper}>
-        <p
-          className={
-            pathname === PATH_NAME.AWARD
-              ? style.PointsTextAwards
-              : style.PointsTextAwards
-          }
-        >
+      <div
+        className={
+          pathname === PATH_NAME.AWARD
+            ? style.ProgressWrapperAwards
+            : style.ProgressWrapper
+        }
+      >
+        <p className={style.PointsTextAwards}>
           Points earned this week:
           <span className={style.PointsAmount}>{points}</span>
         </p>
-        <p
-          className={
-            pathname === PATH_NAME.AWARD
-              ? style.PointsTextAwards
-              : style.PointsTextAwards
-          }
-        >
+        <p className={style.PointsTextAwards}>
           Planned points for this week:
           <span className={style.PointsAmount}>{plannedPoints}</span>
         </p>

@@ -1,0 +1,30 @@
+@import '../../sass/utils/variables';
+@import '../../sass/utils/mixins';
+
+.CurrentDayTitle {
+  @include font(500, 12px, 15px);
+
+  letter-spacing: 0.48px;
+
+  color: $subsidiary-text-color;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 4px;
+
+  @include tablet {
+    margin-top: 24px;
+
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+.CurrentDayText {
+  @include font(700, 12px, 15px);
+
+  letter-spacing: 2.4px;
+
+  color: $primary-text-color;
+}
