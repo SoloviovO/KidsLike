@@ -1,5 +1,5 @@
-@import '../../sass/utils/variables';
-@import '../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .ProgressWrapper {
   display: flex;
@@ -121,7 +121,7 @@
   margin-right: -30px;
 
   display: block;
-  width: 220px;
+  width: 150px;
 
   @include tablet {
     width: 350px;

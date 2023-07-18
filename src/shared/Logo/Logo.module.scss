@@ -1,5 +1,5 @@
-@import '../../sass/utils/variables';
-@import '../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .LogoLink {
   display: flex;
@@ -9,6 +9,6 @@
 .LogoText {
   @include font(700, 16px, 20px);
 
-  letter-spacing: 0.08em;
+  letter-spacing: 0.24px;
   color: $primary-text-color;
 }

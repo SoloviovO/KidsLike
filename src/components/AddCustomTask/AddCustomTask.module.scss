@@ -1,5 +1,5 @@
-@import '../../sass/utils/variables';
-@import '../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .AddTaskBox {
   display: flex;
@@ -30,9 +30,9 @@
 }
 
 .AddTaskBtn {
-  position: absolute;
-  bottom: 20px;
-  right: 0;
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
   z-index: 10;
 
   border: none;

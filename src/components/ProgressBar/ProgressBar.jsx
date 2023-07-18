@@ -52,7 +52,7 @@ const ProgressBar = () => {
               theme={{
                 success: {
                   symbol: ' ',
-                  color: 'rgb(223, 105, 180)',
+                  color: '#ffbc33',
                 },
                 active: {
                   symbol: ' ',

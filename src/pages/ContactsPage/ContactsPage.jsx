@@ -3,7 +3,7 @@ import React from 'react';
 import ContactList from 'components/Contact/ContactList/ContactList';
 import Footer from 'shared/Footer/Footer';
 
-import styles from '../../components/App.module.scss';
+import styles from 'components/App.module.scss';
 import style from './ContactsPage.module.scss';
 
 const ContactsPage = () => {

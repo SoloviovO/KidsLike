@@ -1,38 +1,32 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+
 import { token } from 'redux/Auth/AuthOperations';
 
-export const getGiftsThunk = createAsyncThunk(
-  'awards/getGifts',
+export const getAllAwards = createAsyncThunk(
+  'award/getAwards',
   async (_, { rejectWithValue, getState }) => {
+    const state = getState();
+    const currentToken = state.auth.token;
+    token.set(currentToken);
     try {
-      const currentToken = getState().auth.token;
-      token.set(currentToken);
-      const getGiftsService = async () => {
-        return await axios.get('/gift');
-      };
-
-      const response = await getGiftsService();
-      return response.data.ruGifts;
-    } catch (e) {
-      return rejectWithValue();
+      const { data } = await axios.get('/gift');
+      return data.ruGifts;
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
     }
   }
 );
 
-export const buyGiftsThunk = createAsyncThunk(
-  'awards/buyGifts',
-  async (body, { rejectWithValue }) => {
+export const buyAwards = createAsyncThunk(
+  'award/buyAwards',
+  async (credential, { rejectWithValue }) => {
     try {
-      const buyGiftsService = async body => {
-        return await axios.patch('/gift', body);
-      };
-
-      const resp = await buyGiftsService(body);
-      const { updatedBalance, purchasedGiftIds } = resp.data;
+      const { data } = await axios.patch('/gift', credential);
+      const { updatedBalance, purchasedGiftIds } = data;
       return { updatedBalance, purchasedGiftIds };
-    } catch (e) {
-      return rejectWithValue();
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
     }
   }
 );

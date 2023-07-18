@@ -7,13 +7,13 @@ import {
   configuredStartDate,
 } from './helpers/helpers.function';
 
-import Loader from 'shared/Loader/Loader';
-
 import {
   selectEndWeekDate,
   selectStartWeekDate,
 } from 'redux/Auth/AuthSelectors';
 import { selectRewardsPlanned } from 'redux/Planning/PlanningSelectors';
+
+import Loader from 'shared/Loader/Loader';
 
 import style from './PlanningPoints.module.scss';
 

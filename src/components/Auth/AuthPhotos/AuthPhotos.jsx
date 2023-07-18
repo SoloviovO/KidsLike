@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Prize from '../../../images/auth/Prize.png';
-import PrizeRet from '../../../images/auth/Prize-2x.png';
-import CleanGigl from '../../../images/auth/Clean-girl.png';
-import CleanGiglRet from '../../../images/auth/Clean-girl-2x.png';
-import Robo from '../../../images/auth/Robo.png';
-import RoboRet from '../../../images/auth/Robo-2x.png';
-import Clean from '../../../images/auth/Clean.png';
-import CleanRet from '../../../images/auth/Clean-2x.png';
+import Prize from 'images/auth/Prize.png';
+import PrizeRet from 'images/auth/Prize-2x.png';
+import CleanGigl from 'images/auth/Clean-girl.png';
+import CleanGiglRet from 'images/auth/Clean-girl-2x.png';
+import Robo from 'images/auth/Robo.png';
+import RoboRet from 'images/auth/Robo-2x.png';
+import Clean from 'images/auth/Clean.png';
+import CleanRet from 'images/auth/Clean-2x.png';
 
 import style from './AuthPhotos.module.scss';
 

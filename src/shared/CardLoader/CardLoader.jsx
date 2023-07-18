@@ -1,7 +1,8 @@
 import React from 'react';
 
-import style from './CardLoader.module.scss';
 import Skeleton from './Skeleton/Skeleton';
+
+import style from './CardLoader.module.scss';
 
 const CardListLoader = ({ amount = 8 }) => {
   return (

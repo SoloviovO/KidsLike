@@ -1,5 +1,5 @@
-@import '../../../sass/utils/variables';
-@import '../../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .Container {
   width: 100%;
@@ -37,6 +37,14 @@
   @include font(500, 12px, 15px);
   text-decoration: none;
   color: $secondary-text-color;
+
+  letter-spacing: 0.48px;
+}
+
+.BurgerMenuLinkActive {
+  @include font(600, 12px, 15px);
+  text-decoration: none;
+  color: $primary-text-color;
 
   letter-spacing: 0.48px;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectUserScore } from 'redux/Auth/AuthSelectors';
+
 import Loader from 'shared/Loader/Loader';
 
 import style from './UserScore.module.scss';
@@ -11,7 +12,7 @@ const UserScore = () => {
 
   return (
     <>
-      {userScore ? (
+      {userScore || userScore === 0 ? (
         <div className={style.ScoreBox}>
           <p className={style.ScoreTitle}>Score balance:</p>
           <p className={style.ScoreValue}>{userScore}</p>

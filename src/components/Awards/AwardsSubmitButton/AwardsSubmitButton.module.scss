@@ -1,5 +1,5 @@
-@import '../../../sass/utils/variables';
-@import '../../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .Button {
   width: 220px;
@@ -10,7 +10,7 @@
 
   @include font(500, 12px, 15px);
 
-  letter-spacing: 0.02em;
+  letter-spacing: 0.72px;
   color: $main-content-bg-color;
   filter: drop-shadow($button-shadow);
 

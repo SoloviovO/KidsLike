@@ -1,20 +1,26 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-import { ReactComponent as IconBurgerMenu } from '../../../images/icon-burgerMenu.svg';
-import { ReactComponent as CloseBurgerMenu } from '../../../images/icon-BurgerClose.svg';
+import { ReactComponent as IconBurgerMenu } from 'images/icons/icon-burgerMenu.svg';
+import { ReactComponent as CloseBurgerMenu } from 'images/icons/icon-BurgerClose.svg';
 
 import BurgerMenu from 'shared/BurgerMenu/BurgerMenu';
-import VerticalBar from 'shared/VerticalBar/VerticalBar';
+import VerticalStick from 'shared/VerticalStick/VerticalStick';
 
 import style from './AuthNav.module.scss';
 
 const AuthNav = () => {
   const [isShow, setIsShow] = useState(false);
+  const location = useLocation();
 
   const handleIsShowMenu = () => {
     setIsShow(!isShow);
   };
+
+  const isActive = path => {
+    return location.pathname === path;
+  };
+
   return (
     <>
       <div className={style.BurgerMenuBox}>
@@ -23,11 +29,25 @@ const AuthNav = () => {
         </BurgerMenu>
       </div>
       <nav className={style.NavigationWrapper}>
-        <NavLink to="/auth" className={style.NavigationLink}>
+        <NavLink
+          to="/auth"
+          className={
+            isActive('/auth')
+              ? style.NavigationLinkActive
+              : style.NavigationLink
+          }
+        >
           Log in
         </NavLink>
-        <VerticalBar />
-        <NavLink to="/contacts" className={style.NavigationLink}>
+        <VerticalStick />
+        <NavLink
+          to="/contacts"
+          className={
+            isActive('/contacts')
+              ? style.NavigationLinkActive
+              : style.NavigationLink
+          }
+        >
           Contacts
         </NavLink>
       </nav>

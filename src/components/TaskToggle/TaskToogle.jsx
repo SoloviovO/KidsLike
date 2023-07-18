@@ -5,13 +5,14 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import classNames from 'classnames';
 
+import { ReactComponent as Check } from 'images/icons/checked.svg';
+import { ReactComponent as Attention } from 'images/icons/attention.svg';
+
 import { selectDates } from 'redux/Auth/AuthSelectors';
 import { toggleTaskStatus } from 'redux/Planning/PlanningOperations';
+import { selectAwards } from 'redux/Awards/AwardsSelectors';
+import { toggleSelectAward } from 'redux/Awards/AwardsSlice';
 
-import { ReactComponent as Check } from '../../images/checked.svg';
-import { ReactComponent as Attention } from '../../images/attention.svg';
-import { selectGifts } from 'redux/Awards/AwardsSelectors';
-import { toggleSelectGift } from 'redux/Awards/AwardsSlice';
 import Loader from 'shared/Loader/Loader';
 
 import style from './TaskToggle.module.scss';
@@ -20,7 +21,7 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const dates = useSelector(selectDates, shallowEqual);
-  const gifts = useSelector(selectGifts, shallowEqual);
+  const gifts = useSelector(selectAwards, shallowEqual);
 
   const dispatch = useDispatch();
 
@@ -50,7 +51,7 @@ const TaskToggle = ({ _id, isCompleted, isSelected }) => {
       const idxInArray = gifts.findIndex(gift => {
         return gift.id === +event.target.id;
       });
-      dispatch(toggleSelectGift(idxInArray));
+      dispatch(toggleSelectAward(idxInArray));
     }
   };
   return (

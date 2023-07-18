@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
-import LogOut from '../../../shared/LogOut/LogOut';
+import { ReactComponent as IconBurgerMenu } from 'images/icons/icon-burgerMenu.svg';
+import { ReactComponent as CloseBurgerMenu } from 'images/icons/icon-BurgerClose.svg';
+
 import ModalLogout from 'components/Modal/ModalLogout/ModalLogout';
 import UserInfo from 'components/Auth/UserInfo/UserInfo';
 import BurgerMenu from 'shared/BurgerMenu/BurgerMenu';
-import VerticalBar from 'shared/VerticalBar/VerticalBar';
+import VerticalStick from 'shared/VerticalStick/VerticalStick';
+import LogOut from 'shared/LogOut/LogOut';
 
-import { ReactComponent as IconBurgerMenu } from '../../../images/icon-burgerMenu.svg';
-import { ReactComponent as CloseBurgerMenu } from '../../../images/icon-BurgerClose.svg';
 import style from './UserNav.module.scss';
 
 const UserNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isShowNav, setIsShowNav] = useState(false);
+  const location = useLocation();
 
   const handleTogleModal = () => {
     setIsOpen(!isOpen);
@@ -21,6 +23,10 @@ const UserNav = () => {
 
   const handleIsShowMenu = () => {
     setIsShowNav(!isShowNav);
+  };
+
+  const isActive = path => {
+    return location.pathname === path;
   };
 
   return (
@@ -32,25 +38,51 @@ const UserNav = () => {
           </BurgerMenu>
         </div>
         <nav className={style.BurgerMenuNavigation}>
-          <NavLink to="/" className={style.BurgerMenuLink}>
+          <NavLink
+            to="/"
+            className={
+              isActive('/') ? style.BurgerMenuLinkActive : style.BurgerMenuLink
+            }
+          >
             Main
           </NavLink>
-          <VerticalBar />
-          <NavLink to="/planning" className={style.BurgerMenuLink}>
+          <VerticalStick />
+          <NavLink
+            to="/planning"
+            className={
+              isActive('/planning')
+                ? style.BurgerMenuLinkActive
+                : style.BurgerMenuLink
+            }
+          >
             Planning
           </NavLink>
-          <VerticalBar />
-          <NavLink to="/awards" className={style.BurgerMenuLink}>
+          <VerticalStick />
+          <NavLink
+            to="/awards"
+            className={
+              isActive('/awards')
+                ? style.BurgerMenuLinkActive
+                : style.BurgerMenuLink
+            }
+          >
             Award
           </NavLink>
-          <VerticalBar />
-          <NavLink to="/contacts" className={style.BurgerMenuLink}>
+          <VerticalStick />
+          <NavLink
+            to="/contacts"
+            className={
+              isActive('/contacts')
+                ? style.BurgerMenuLinkActive
+                : style.BurgerMenuLink
+            }
+          >
             Contacts
           </NavLink>
         </nav>
         <div className={style.BurgerBox}>
           <UserInfo />
-          <VerticalBar />
+          <VerticalStick />
           <LogOut openModal={handleTogleModal} />
           {isOpen && <ModalLogout onClose={handleTogleModal} />}
         </div>
@@ -60,7 +92,7 @@ const UserNav = () => {
               <div className={style.BurgerMenuBox}>
                 <div className={style.BurgerMenuWrapper}>
                   <UserInfo />
-                  <VerticalBar />
+                  <VerticalStick />
                   <LogOut openModal={handleTogleModal} />
                   {isOpen && <ModalLogout onClose={handleTogleModal} />}
                 </div>

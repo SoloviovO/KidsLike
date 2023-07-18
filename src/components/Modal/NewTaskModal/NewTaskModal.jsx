@@ -1,17 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPortal } from 'react-dom';
-
 import { RxCross1 } from 'react-icons/rx';
 import { toast } from 'react-toastify';
 
 import modalRobot from 'images/modal-img/modal-robot.png';
 import modalRobotRet from 'images/modal-img/modal-robot-2x.png';
-import modalImage from 'images/modal-image.svg';
-import modalEditInput from 'images/edit-log.svg';
+import modalImage from 'images/icons/modal-image.svg';
+import modalEditInput from 'images/icons/edit-log.svg';
+
 import { createTask } from 'redux/Planning/PlanningOperations';
 
 import style from '../ModalLogout/ModalLogout.module.scss';
+import styles from './NewTaskModal.module.scss';
 
 const modalEl = document.querySelector('#modal-root');
 
@@ -26,23 +27,35 @@ const NewTaskModal = ({ onClose }) => {
   const [isModalOpen, setModalOpen] = useState(false);
   const modalRef = useRef(null);
 
-  const onHandleChangeTaskName = e => {
-    setTaskName(e.target.value);
+  const onHandleChangeTaskName = event => {
+    setTaskName(event.target.value);
   };
 
-  const onHandleChangeReward = e => {
-    setReward(e.target.value);
+  const onHandleChangeReward = event => {
+    setReward(event.target.value);
   };
 
-  const onHandleChangeImage = e => {
-    setImage(e.target.files[0]);
+  const onHandleChangeImage = event => {
+    setImage(event.target.files[0]);
   };
 
-  const onHandleSubmit = e => {
-    e.preventDefault();
+  const onHandleSubmit = async event => {
+    event.preventDefault();
 
-    if (image.size > 2048000) {
-      return toast.error('Too big size image');
+    if (!taskName || !reward || !image) {
+      return toast.warning('Select file, add title and points!');
+    }
+
+    if (image.size > 1024000) {
+      return toast.warning('The image is too large!');
+    }
+
+    if (reward < 1) {
+      return toast.warning('Must be a positive number!');
+    }
+
+    if (taskName.length < 2) {
+      return toast.warning('Title is very short!');
     }
 
     const body = new FormData();
@@ -51,7 +64,12 @@ const NewTaskModal = ({ onClose }) => {
     body.append('reward', reward);
     body.append('file', image);
 
-    dispatch(createTask(body));
+    try {
+      await dispatch(createTask(body)).unwrap();
+      toast.success('Add new task!');
+    } catch (error) {
+      toast.error(error);
+    }
 
     setTaskName('');
     setReward('');
@@ -107,7 +125,7 @@ const NewTaskModal = ({ onClose }) => {
       ref={modalRef}
     >
       <div
-        className={`${style.Modal} ${isModalOpen ? style.Open : ''}`}
+        className={`${styles.Modal} ${isModalOpen ? styles.Open : ''}`}
         tabIndex={0}
       >
         <button
@@ -121,23 +139,35 @@ const NewTaskModal = ({ onClose }) => {
         <div>
           <picture>
             <source srcSet={`${modalRobot}, ${modalRobotRet} 2x`} />
-            <img src={modalRobot} alt="modal robo" />
+            <img
+              className={styles.ModalImage}
+              src={modalRobot}
+              alt="modal robo"
+            />
           </picture>
-
-          <button type="button" onClick={() => imageInputRef.current?.click()}>
-            <img src={modalImage} alt="file" />
+          <button
+            className={styles.ModalBtnAdd}
+            type="button"
+            onClick={() => imageInputRef.current?.click()}
+          >
+            <img className={styles.ModalImageAdd} src={modalImage} alt="file" />
           </button>
-          <form onSubmit={onHandleSubmit}>
+          <form className={styles.ModalForm} onSubmit={onHandleSubmit}>
             <input
               type="file"
               hidden
               ref={imageInputRef}
               onChange={onHandleChangeImage}
             />
-            <div>
-              <label>
-                <img src={modalEditInput} alt="modal Edit Input" />
+            <div className={styles.ModalAddTaskBox}>
+              <label className={styles.ModalLabel}>
+                <img
+                  className={styles.ModalInputImg}
+                  src={modalEditInput}
+                  alt="modal Edit Input"
+                />
                 <input
+                  className={styles.ModalInput}
                   type="text"
                   placeholder="Add task..."
                   value={taskName}
@@ -145,10 +175,15 @@ const NewTaskModal = ({ onClose }) => {
                 />
               </label>
             </div>
-            <div>
-              <label>
-                <img src={modalEditInput} alt="modal Edit Input" />
+            <div className={styles.ModalAddTaskBox}>
+              <label className={styles.ModalLabel}>
+                <img
+                  className={styles.ModalInputImg}
+                  src={modalEditInput}
+                  alt="modal Edit Input"
+                />
                 <input
+                  className={styles.ModalInput}
                   type="number"
                   placeholder="Add points..."
                   value={reward}
@@ -156,7 +191,9 @@ const NewTaskModal = ({ onClose }) => {
                 />
               </label>
             </div>
-            <button type="submit">Ок</button>
+            <button className={styles.ModalButton} type="submit">
+              Ок
+            </button>
           </form>
         </div>
       </div>

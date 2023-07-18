@@ -1,5 +1,5 @@
-@import '../../../sass/utils/variables';
-@import '../../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .BurgerMenuBox {
   margin-left: auto;
@@ -27,6 +27,15 @@
   letter-spacing: 0.48px;
   text-decoration: none;
   color: $secondary-text-color;
+}
+
+.NavigationLinkActive {
+  @include font(600, 12px, 15px);
+
+  text-decoration: none;
+  color: $primary-text-color;
+
+  letter-spacing: 0.48px;
 }
 
 .NavigationBox {

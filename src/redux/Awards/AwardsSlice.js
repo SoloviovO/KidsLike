@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { buyGiftsThunk, getGiftsThunk } from './AwardsOperations';
+import { buyAwards, getAllAwards } from './AwardsOperations';
 
 const awardsInitialState = {
   gifts: [],
@@ -12,38 +12,38 @@ const awardsSlice = createSlice({
   name: 'award',
   initialState: awardsInitialState,
   reducers: {
-    toggleSelectGift(state, { payload }) {
+    toggleSelectAward(state, { payload }) {
       state.gifts[payload].isSelected = !state.gifts[payload].isSelected;
     },
-    refreshBoughtGiftsIds(state, { payload }) {
+    refreshBoughtAwardsId(state, { payload }) {
       state.boughtGiftsIds = [];
       state.gifts = payload;
     },
   },
   extraReducers: builder => {
     builder
-      .addCase(getGiftsThunk.pending, state => {
+      .addCase(getAllAwards.pending, state => {
         state.isLoading = true;
       })
-      .addCase(getGiftsThunk.fulfilled, (state, { payload }) => {
+      .addCase(getAllAwards.fulfilled, (state, { payload }) => {
         state.gifts = payload;
         state.isLoading = false;
       })
-      .addCase(getGiftsThunk.rejected, state => {
+      .addCase(getAllAwards.rejected, state => {
         state.isLoading = false;
       })
-      .addCase(buyGiftsThunk.pending, state => {
+      .addCase(buyAwards.pending, state => {
         state.isLoading = true;
       })
-      .addCase(buyGiftsThunk.fulfilled, (state, { payload }) => {
+      .addCase(buyAwards.fulfilled, (state, { payload }) => {
         state.boughtGiftsIds = payload.purchasedGiftIds;
         state.isLoading = false;
       })
-      .addCase(buyGiftsThunk.rejected, state => {
+      .addCase(buyAwards.rejected, state => {
         state.isLoading = false;
       });
   },
 });
 
-export const { toggleSelectGift, refreshBoughtGiftsIds } = awardsSlice.actions;
+export const { toggleSelectAward, refreshBoughtAwardsId } = awardsSlice.actions;
 export const awardsReducer = awardsSlice.reducer;

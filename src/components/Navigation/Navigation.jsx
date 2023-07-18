@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import { selectIsLoggedIn } from 'redux/Auth/AuthSelectors';
+
 import AuthNav from 'components/Auth/AuthNav/AuthNav';
 import UserNav from 'components/Auth/UserNav/UserNav';
-import { selectIsLoggedIn } from 'redux/Auth/AuthSelectors';
 
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

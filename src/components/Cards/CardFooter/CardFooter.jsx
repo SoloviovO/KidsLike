@@ -2,12 +2,12 @@ import React from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import { ReactComponent as Success } from 'images/icons/success.svg';
+import { ReactComponent as UnSuccess } from 'images/icons/unsuccess.svg';
+
 import CardTitle from 'components/Cards/CardTitle/CardTitle';
 import PointAmount from 'components/Cards/PointAmount/PointAmount';
 import TaskToggle from 'components/TaskToggle/TaskToogle';
-
-import { ReactComponent as Success } from '../../../images/success.svg';
-import { ReactComponent as UnSuccess } from '../../../images/unsuccess.svg';
 import AddPlanningBtn from 'shared/AddPlanningBtn/AddPlanningBtn';
 
 import style from './CardFooter.module.scss';
@@ -58,7 +58,7 @@ const CardFooter = ({ ...taskInfo }) => {
   return (
     <>
       <div className={style.CardFooterBox}>
-        <div>
+        <div className={style.CardFooterWrapper}>
           <CardTitle title={title} />
           <PointAmount point={reward} />
         </div>

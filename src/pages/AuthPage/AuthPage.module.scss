@@ -1,5 +1,5 @@
-@import '../../sass/utils/variables';
-@import '../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .AuthWrapper {
   margin: 0 auto;
@@ -26,5 +26,22 @@
   }
   @include desktop {
     width: 394px;
+  }
+}
+
+.FooterBox {
+  display: none;
+
+  @include tablet {
+    margin-top: 60px;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  @include desktop {
+    margin-top: 130px;
+
+    justify-content: flex-end;
   }
 }

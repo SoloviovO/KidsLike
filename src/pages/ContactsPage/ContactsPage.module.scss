@@ -1,5 +1,5 @@
-@import '../../sass/utils/variables';
-@import '../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .ContactWrapper {
   padding: 40px 0 40px;
@@ -21,8 +21,7 @@
   color: $primary-text-color;
 
   @include tablet {
-    font-size: 30px;
-    line-height: 37px;
+    @include font(600, 30px, 37px);
   }
 }
 
@@ -31,11 +30,10 @@
 
   @include font(400, 14px, 17px);
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.48px;
   color: $primary-text-color;
 
   @include tablet {
-    font-size: 18px;
-    line-height: 22px;
+    @include font(400, 18px, 22px);
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 
 import { selectWeekRange } from 'redux/Auth/AuthSelectors';
+
 import Loader from 'shared/Loader/Loader';
 
 import style from './CurrentWeekRange.module.scss';

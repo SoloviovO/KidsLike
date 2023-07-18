@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 
-import { ReactComponent as IconOk } from 'images/icon-ok.svg';
-import { ReactComponent as IconAdd } from 'images/icon-add.svg';
+import { ReactComponent as IconOk } from 'images/icons/icon-ok.svg';
+import { ReactComponent as IconAdd } from 'images/icons/icon-add.svg';
+
+import { addTaskForDays } from 'redux/Planning/PlanningOperations';
+import { selectDaysList } from 'redux/Planning/PlanningSelectors';
 
 import DaysList from 'shared/DaysList/DaysList';
 import Loader from 'shared/Loader/Loader';
-import { addTaskToProvidedDays } from 'redux/Planning/PlanningOperations';
-import { selectDaysList } from 'redux/Planning/PlanningSelectors';
 
 import style from './AddPlanningBtn.module.scss';
 
@@ -39,7 +40,7 @@ const AddPlanningBtn = ({ _id }) => {
     setIsLoading(true);
 
     dispatch(
-      addTaskToProvidedDays({
+      addTaskForDays({
         id: _id,
         body: {
           days: selectedRadio.map(day => day.isChecked),

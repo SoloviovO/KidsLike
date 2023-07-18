@@ -3,17 +3,17 @@ import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import { currentUserInfo } from 'redux/Auth/AuthOperations';
-import Header from '../shared/Header/Header';
+import Header from 'shared/Header/Header';
 
-import { PrivateRoute } from '../shared/PrivateRoute/PrivateRoute';
-import { PublicRoute } from '../shared/PublicRoute/PublicRoute';
+import { PrivateRoute } from 'shared/PrivateRoute/PrivateRoute';
+import { PublicRoute } from 'shared/PublicRoute/PublicRoute';
 
-const AuthPage = lazy(() => import('../pages/AuthPage/AuthPage'));
-const AwardsPage = lazy(() => import('../pages/AwardsPage/AwardsPage'));
-const MainPage = lazy(() => import('../pages/MainPage/MainPage'));
-const PlanningPage = lazy(() => import('../pages/PlanningPage/PlanningPage'));
-const ContactsPage = lazy(() => import('../pages/ContactsPage/ContactsPage'));
-const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
+const AuthPage = lazy(() => import('pages/AuthPage/AuthPage'));
+const AwardsPage = lazy(() => import('pages/AwardsPage/AwardsPage'));
+const MainPage = lazy(() => import('pages/MainPage/MainPage'));
+const PlanningPage = lazy(() => import('pages/PlanningPage/PlanningPage'));
+const ContactsPage = lazy(() => import('pages/ContactsPage/ContactsPage'));
+const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
   const dispatch = useDispatch();

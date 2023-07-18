@@ -7,6 +7,7 @@ import {
   registerUser,
 } from './AuthOperations';
 import { toggleTaskStatus } from 'redux/Planning/PlanningOperations';
+import { buyAwards } from 'redux/Awards/AwardsOperations';
 
 const authInitialState = {
   user: {},
@@ -62,6 +63,16 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(toggleTaskStatus.rejected, state => {
+        state.isLoading = false;
+      })
+      .addCase(buyAwards.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(buyAwards.fulfilled, (state, { payload }) => {
+        state.user.balance = payload.updatedBalance;
+        state.isLoading = false;
+      })
+      .addCase(buyAwards.rejected, state => {
         state.isLoading = false;
       });
   },

@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-
 import { toast } from 'react-toastify';
-import Footer from 'shared/Footer/Footer';
-import CardList from 'components/Cards/CardList/CardList';
+
 import {
-  selectBoughtGiftsIds,
-  selectGifts,
+  selectBoughtAwardsId,
+  selectAwards,
 } from 'redux/Awards/AwardsSelectors';
 import { selectBalance } from 'redux/Planning/PlanningSelectors';
-import { buyGiftsThunk, getGiftsThunk } from 'redux/Awards/AwardsOperations';
-import { refreshBoughtGiftsIds } from 'redux/Awards/AwardsSlice';
+import { buyAwards, getAllAwards } from 'redux/Awards/AwardsOperations';
+import { refreshBoughtAwardsId } from 'redux/Awards/AwardsSlice';
+
+import CardList from 'components/Cards/CardList/CardList';
 import AwardsTitle from 'components/Awards/AwardsTitle/AwardsTitle';
 import AwardsSubmitButton from 'components/Awards/AwardsSubmitButton/AwardsSubmitButton';
 import CongratsModal from 'components/Modal/CongratsModal/CongratsModal';
 import CardListLoader from 'shared/CardLoader/CardLoader';
+import Footer from 'shared/Footer/Footer';
 
-import styles from '../../components/App.module.scss';
+import styles from 'components/App.module.scss';
 import style from './AwardsPage.module.scss';
 
 const AwardsPage = () => {
-  const boughtGiftsIds = useSelector(selectBoughtGiftsIds, shallowEqual);
+  const boughtGiftsIds = useSelector(selectBoughtAwardsId, shallowEqual);
   const balance = useSelector(selectBalance, shallowEqual);
-  const gifts = useSelector(selectGifts, shallowEqual);
+  const gifts = useSelector(selectAwards, shallowEqual);
 
   const [dataForModal, setDataForModal] = useState([]);
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ const AwardsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getGiftsThunk());
+    dispatch(getAllAwards());
   }, [dispatch]);
 
   useEffect(() => {
@@ -65,12 +66,12 @@ const AwardsPage = () => {
       }, 0);
 
       if (balance >= totalPrice) {
-        dispatch(buyGiftsThunk({ giftIds: selectedGiftsIds }));
+        dispatch(buyAwards({ giftIds: selectedGiftsIds }));
       } else {
-        toast.error('Not enough points to make a purchase!');
+        toast.warning('Not enough points to exchange for a prize!');
       }
     } else {
-      toast.info('Nothing is selected!');
+      toast.info('None of the prizes has been selected!');
     }
   };
 
@@ -78,7 +79,7 @@ const AwardsPage = () => {
     const refreshedGifts = gifts.reduce((acc, gift) => {
       return [...acc, { ...gift, isSelected: false }];
     }, []);
-    dispatch(refreshBoughtGiftsIds(refreshedGifts));
+    dispatch(refreshBoughtAwardsId(refreshedGifts));
     setOpen(false);
   };
 

@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 
+import { selectDaysTasks } from 'redux/Planning/PlanningSelectors';
+
 import CardList from 'components/Cards/CardList/CardList';
 import CurrentDay from 'components/CurrentDay/CurrentDay';
 import CurrentWeekRange from 'components/CurrentWeekRange/CurrentWeekRange';
 import NoTasks from 'components/NoTasks/NoTasks';
 import ProgressBar from 'components/ProgressBar/ProgressBar';
 import CardLoader from 'shared/CardLoader/CardLoader';
-
-import { selectDaysTasks } from 'redux/Planning/PlanningSelectors';
 
 import style from './WeekTabContent.module.scss';
 
