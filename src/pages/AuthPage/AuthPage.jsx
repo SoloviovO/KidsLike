@@ -5,6 +5,7 @@ import AuthPhotos from 'components/Auth/AuthPhotos/AuthPhotos';
 
 import style from './AuthPage.module.scss';
 import styles from '../../components/App.module.scss';
+import Footer from 'shared/Footer/Footer';
 
 const AuthPage = () => {
   return (
@@ -14,6 +15,9 @@ const AuthPage = () => {
           <AuthPhotos />
           <div className={style.FormBox}>
             <AuthForm />
+            <div className={style.FooterBox}>
+              <Footer />
+            </div>
           </div>
         </div>
       </div>

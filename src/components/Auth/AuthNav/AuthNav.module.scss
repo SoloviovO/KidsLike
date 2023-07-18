@@ -29,6 +29,15 @@
   color: $secondary-text-color;
 }
 
+.NavigationLinkActive {
+  @include font(600, 12px, 15px);
+
+  text-decoration: none;
+  color: $primary-text-color;
+
+  letter-spacing: 0.48px;
+}
+
 .NavigationBox {
   position: fixed;
   width: 100%;

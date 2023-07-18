@@ -4,7 +4,8 @@ import { RxCross1 } from 'react-icons/rx';
 
 import ModalContentGetGifts from 'components/Awards/ModalContentGetGifts/ModalContentGetGifts';
 
-import style from '../ModalLogout/ModalLogout.module.scss';
+import styles from '../ModalLogout/ModalLogout.module.scss';
+import style from './CongratsModal.module.scss';
 
 const modalEl = document.querySelector('#modal-root');
 
@@ -56,7 +57,7 @@ const CongratsModal = ({ onClose, awards }) => {
 
   return createPortal(
     <div
-      className={`${style.Backdrop} ${isModalOpen ? style.Open : ''}`}
+      className={`${styles.Backdrop} ${isModalOpen ? styles.Open : ''}`}
       onClick={handleBackdropClick}
       tabIndex={-1}
       ref={modalRef}
@@ -68,10 +69,10 @@ const CongratsModal = ({ onClose, awards }) => {
         <button
           aria-label="Закрити"
           type="button"
-          className={style.CloseButton}
+          className={styles.CloseButton}
           onClick={handleClose}
         >
-          <RxCross1 className={style.CloseButtonIcon} />
+          <RxCross1 className={styles.CloseButtonIcon} />
         </button>
         <ModalContentGetGifts awards={awards} />
       </div>

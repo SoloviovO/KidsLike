@@ -11,7 +11,7 @@ const UserScore = () => {
 
   return (
     <>
-      {userScore ? (
+      {userScore || userScore === 0 ? (
         <div className={style.ScoreBox}>
           <p className={style.ScoreTitle}>Score balance:</p>
           <p className={style.ScoreValue}>{userScore}</p>

@@ -28,7 +28,7 @@
   }
 
   @include desktop {
-    margin: 0 138px 0 0;
+    margin: 0 130px 0 0;
   }
 }
 
@@ -82,8 +82,10 @@
 
 .PlanWeekPointTextB {
   display: none;
+
   @include tablet {
     display: inline-block;
+    width: 120px;
 
     @include font(500, 12px, 15px);
 
@@ -119,11 +121,15 @@
 }
 
 .PlannedPoint {
+  padding: 10px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 30px;
+  border-radius: 50%;
   min-height: 30px;
+  min-width: 40px;
 
   @include font(700, 14px, 18px);
 

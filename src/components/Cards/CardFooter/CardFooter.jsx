@@ -58,7 +58,7 @@ const CardFooter = ({ ...taskInfo }) => {
   return (
     <>
       <div className={style.CardFooterBox}>
-        <div>
+        <div className={style.CardFooterWrapper}>
           <CardTitle title={title} />
           <PointAmount point={reward} />
         </div>

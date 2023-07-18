@@ -1,0 +1,70 @@
+@import '../../../sass/utils/variables';
+@import '../../../sass/utils/mixins';
+
+.ModalImg {
+  position: absolute;
+  left: 73px;
+  top: -100px;
+
+  width: 132px;
+
+  @include tablet {
+    left: 204px;
+    top: -115px;
+
+    width: 200px;
+  }
+}
+
+.ModalTitle {
+  margin-bottom: 24px;
+  padding: 0 50px;
+
+  @include font(600, 18px, 22px);
+
+  text-align: center;
+
+  @include tablet {
+    margin-bottom: 24px;
+    padding: 0;
+
+    @include font(600, 30px, 37px);
+
+    width: 100%;
+  }
+
+  @include desktop {
+    margin-bottom: 32px;
+  }
+}
+
+.ModalAwardList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.ModalAwardListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.ModalAwardImage {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid $secondary-bg-color;
+  object-fit: cover;
+}
+
+.ModalAwarddName {
+  @include font(700, 12px, 15px);
+
+  text-align: center;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
+  color: $primary-text-color;
+}

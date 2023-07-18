@@ -77,8 +77,8 @@ export const createTask = createAsyncThunk(
       const { title, reward, imageUrl, id, days } = data;
 
       return { title, reward, imageUrl, _id: id, days };
-    } catch (e) {
-      return rejectWithValue();
+    } catch (error) {
+      return rejectWithValue(error.response.data.message);
     }
   }
 );

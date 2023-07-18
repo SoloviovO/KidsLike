@@ -53,8 +53,8 @@
 
 .CloseButton {
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 16px;
+  right: 16px;
 
   display: flex;
   justify-content: center;
@@ -64,11 +64,9 @@
   border: none;
   width: 24px;
   height: 24px;
+  z-index: 2;
 
   @include tablet {
-    top: 24px;
-    right: 24px;
-
     width: 28px;
     height: 28px;
   }
@@ -108,7 +106,7 @@
   border-radius: 6px;
 
   @include font(500, 12px, 15px);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.72px;
   color: $main-content-bg-color;
   filter: drop-shadow($button-shadow);
 

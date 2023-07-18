@@ -40,7 +40,7 @@
 
   @include font(400, 12px, 15px);
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.48px;
   color: $secondary-text-color;
 }
 
@@ -54,7 +54,7 @@
 
   @include font(400, 12px, 15px);
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.48px;
   color: $secondary-text-color;
 }
 
@@ -65,7 +65,7 @@
 .LabelRequired {
   @include font(400, 12px, 15px);
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.48px;
   color: $error-text-color;
 }
 
@@ -78,7 +78,7 @@
 
   @include font(400, 14px, 17px);
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.48px;
   color: $secondary-text-color;
   background: $subsidiary-bg-color;
   box-shadow: $input-shadow;
@@ -100,7 +100,7 @@
 
   @include font(400, 14px, 17px);
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.48px;
   color: $secondary-text-color;
   background: $subsidiary-bg-color;
   box-shadow: $input-shadow;
@@ -133,7 +133,7 @@
 
   @include font(400, 10px, 12px);
 
-  letter-spacing: 0.04em;
+  letter-spacing: 0.48px;
   color: $error-text-color;
 }
 

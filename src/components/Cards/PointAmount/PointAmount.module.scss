@@ -2,11 +2,11 @@
 @import '../../../sass/utils/mixins';
 
 .PointAmount {
-  padding: 3px;
+  padding: 3px 10px;
 
   @include font(500, 10px, 12px);
 
-  width: 75px;
+  min-width: 75px;
   background-color: $card-bg-color;
   color: $primary-bg-color;
   border-radius: 3px;
