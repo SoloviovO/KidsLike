@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import classNames from 'classnames';
 
-import { ReactComponent as Check } from 'images/checked.svg';
-import { ReactComponent as Attention } from 'images/attention.svg';
+import { ReactComponent as Check } from 'images/icons/checked.svg';
+import { ReactComponent as Attention } from 'images/icons/attention.svg';
 
 import { selectDates } from 'redux/Auth/AuthSelectors';
 import { toggleTaskStatus } from 'redux/Planning/PlanningOperations';

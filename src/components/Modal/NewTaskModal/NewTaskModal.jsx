@@ -6,8 +6,8 @@ import { toast } from 'react-toastify';
 
 import modalRobot from 'images/modal-img/modal-robot.png';
 import modalRobotRet from 'images/modal-img/modal-robot-2x.png';
-import modalImage from 'images/modal-image.svg';
-import modalEditInput from 'images/edit-log.svg';
+import modalImage from 'images/icons/modal-image.svg';
+import modalEditInput from 'images/icons/edit-log.svg';
 
 import { createTask } from 'redux/Planning/PlanningOperations';
 

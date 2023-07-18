@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { ReactComponent as IconBurgerMenu } from 'images/icon-burgerMenu.svg';
-import { ReactComponent as CloseBurgerMenu } from 'images/icon-BurgerClose.svg';
+import { ReactComponent as IconBurgerMenu } from 'images/icons/icon-burgerMenu.svg';
+import { ReactComponent as CloseBurgerMenu } from 'images/icons/icon-BurgerClose.svg';
 
 import ModalLogout from 'components/Modal/ModalLogout/ModalLogout';
 import UserInfo from 'components/Auth/UserInfo/UserInfo';

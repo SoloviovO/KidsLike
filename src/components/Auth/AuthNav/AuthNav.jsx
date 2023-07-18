@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { ReactComponent as IconBurgerMenu } from 'images/icon-burgerMenu.svg';
-import { ReactComponent as CloseBurgerMenu } from 'images/icon-BurgerClose.svg';
+import { ReactComponent as IconBurgerMenu } from 'images/icons/icon-burgerMenu.svg';
+import { ReactComponent as CloseBurgerMenu } from 'images/icons/icon-BurgerClose.svg';
 
 import BurgerMenu from 'shared/BurgerMenu/BurgerMenu';
 import VerticalStick from 'shared/VerticalStick/VerticalStick';

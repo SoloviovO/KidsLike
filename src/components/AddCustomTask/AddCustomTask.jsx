@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import iconAddTasks from 'images/icon-addTasks.svg';
+import iconAddTasks from 'images/icons/icon-addTasks.svg';
 
 import NewTaskModal from 'components/Modal/NewTaskModal/NewTaskModal';
 
