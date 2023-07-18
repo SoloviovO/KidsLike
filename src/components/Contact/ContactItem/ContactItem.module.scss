@@ -1,5 +1,5 @@
-@import '../../../sass/utils/variables';
-@import '../../../sass/utils/mixins';
+@import 'src/sass/utils/variables';
+@import 'src/sass/utils/mixins';
 
 .ContactItems {
   max-width: 280px;
@@ -7,7 +7,7 @@
   box-shadow: $main-shadow;
   border-radius: 6px;
   transform: scale(1);
-  transition: $main-transition;
+  transition: transform $main-transition;
 
   @include tablet {
     max-width: 336px;

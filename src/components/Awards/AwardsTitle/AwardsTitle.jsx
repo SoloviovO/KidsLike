@@ -1,7 +1,7 @@
 import ProgressBar from 'components/ProgressBar/ProgressBar';
 import React from 'react';
 
-import { ReactComponent as PrizeIcon } from '../../../images/icon-awards.svg';
+import { ReactComponent as PrizeIcon } from 'images/icon-awards.svg';
 
 import style from './AwardsTitle.module.scss';
 

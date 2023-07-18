@@ -2,10 +2,10 @@ import React from 'react';
 
 import AuthForm from 'components/Auth/AuthForm/AuthForm';
 import AuthPhotos from 'components/Auth/AuthPhotos/AuthPhotos';
+import Footer from 'shared/Footer/Footer';
 
 import style from './AuthPage.module.scss';
-import styles from '../../components/App.module.scss';
-import Footer from 'shared/Footer/Footer';
+import styles from 'components/App.module.scss';
 
 const AuthPage = () => {
   return (

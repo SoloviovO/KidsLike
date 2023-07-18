@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as LogOutIcon } from '../../images/logout.svg';
+import { ReactComponent as LogOutIcon } from 'images/logout.svg';
 
 import style from './LogOut.module.scss';
 

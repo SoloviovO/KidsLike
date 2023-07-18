@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as LogoMain } from '../../images/victory.svg';
+import { ReactComponent as LogoMain } from 'images/icons/victory.svg';
 
 import style from './Footer.module.scss';
 

@@ -21,7 +21,7 @@ const AuthForm = () => {
   const handleLogIn = async () => {
     try {
       await dispatch(logInUser(user)).unwrap();
-      toast.success('Congratulations !!!');
+      toast.success('Congratulations!');
     } catch (error) {
       toast.error(error);
     }
@@ -32,7 +32,7 @@ const AuthForm = () => {
   const handleRegistration = async () => {
     try {
       await dispatch(registerUser(user)).unwrap();
-      toast.success('Congratulations !!!');
+      toast.success('Congratulations!');
     } catch (error) {
       toast.error(error);
     }

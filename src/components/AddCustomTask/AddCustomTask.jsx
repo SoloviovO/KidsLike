@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import iconAddTasks from 'images/icon-addTasks.svg';
+
 import NewTaskModal from 'components/Modal/NewTaskModal/NewTaskModal';
 
 import style from './AddCustomTask.module.scss';

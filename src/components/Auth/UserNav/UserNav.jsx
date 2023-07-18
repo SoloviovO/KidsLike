@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import LogOut from '../../../shared/LogOut/LogOut';
+import { ReactComponent as IconBurgerMenu } from 'images/icon-burgerMenu.svg';
+import { ReactComponent as CloseBurgerMenu } from 'images/icon-BurgerClose.svg';
+
 import ModalLogout from 'components/Modal/ModalLogout/ModalLogout';
 import UserInfo from 'components/Auth/UserInfo/UserInfo';
 import BurgerMenu from 'shared/BurgerMenu/BurgerMenu';
-import VerticalBar from 'shared/VerticalBar/VerticalBar';
+import VerticalStick from 'shared/VerticalStick/VerticalStick';
+import LogOut from 'shared/LogOut/LogOut';
 
-import { ReactComponent as IconBurgerMenu } from '../../../images/icon-burgerMenu.svg';
-import { ReactComponent as CloseBurgerMenu } from '../../../images/icon-BurgerClose.svg';
 import style from './UserNav.module.scss';
 
 const UserNav = () => {
@@ -45,7 +46,7 @@ const UserNav = () => {
           >
             Main
           </NavLink>
-          <VerticalBar />
+          <VerticalStick />
           <NavLink
             to="/planning"
             className={
@@ -56,7 +57,7 @@ const UserNav = () => {
           >
             Planning
           </NavLink>
-          <VerticalBar />
+          <VerticalStick />
           <NavLink
             to="/awards"
             className={
@@ -67,7 +68,7 @@ const UserNav = () => {
           >
             Award
           </NavLink>
-          <VerticalBar />
+          <VerticalStick />
           <NavLink
             to="/contacts"
             className={
@@ -81,7 +82,7 @@ const UserNav = () => {
         </nav>
         <div className={style.BurgerBox}>
           <UserInfo />
-          <VerticalBar />
+          <VerticalStick />
           <LogOut openModal={handleTogleModal} />
           {isOpen && <ModalLogout onClose={handleTogleModal} />}
         </div>
@@ -91,7 +92,7 @@ const UserNav = () => {
               <div className={style.BurgerMenuBox}>
                 <div className={style.BurgerMenuWrapper}>
                   <UserInfo />
-                  <VerticalBar />
+                  <VerticalStick />
                   <LogOut openModal={handleTogleModal} />
                   {isOpen && <ModalLogout onClose={handleTogleModal} />}
                 </div>

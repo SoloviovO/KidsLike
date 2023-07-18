@@ -1,14 +1,15 @@
 import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 
-import Footer from 'shared/Footer/Footer';
+import { selectAllTasks } from 'redux/Planning/PlanningSelectors';
+
 import PlanningPoints from 'components/PlanningPoints/PlanningPoints';
 import CardsList from 'components/Cards/CardList/CardList';
-import { selectAllTasks } from 'redux/Planning/PlanningSelectors';
 import AddCustomTask from 'components/AddCustomTask/AddCustomTask';
 import CardLoader from 'shared/CardLoader/CardLoader';
+import Footer from 'shared/Footer/Footer';
 
-import styles from '../../components/App.module.scss';
+import styles from 'components/App.module.scss';
 import style from './PlanningPage.module.scss';
 
 const PlanningPage = () => {

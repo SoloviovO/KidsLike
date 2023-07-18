@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createPortal } from 'react-dom';
-
 import { RxCross1 } from 'react-icons/rx';
 import { toast } from 'react-toastify';
 
@@ -9,6 +8,7 @@ import modalRobot from 'images/modal-img/modal-robot.png';
 import modalRobotRet from 'images/modal-img/modal-robot-2x.png';
 import modalImage from 'images/modal-image.svg';
 import modalEditInput from 'images/edit-log.svg';
+
 import { createTask } from 'redux/Planning/PlanningOperations';
 
 import style from '../ModalLogout/ModalLogout.module.scss';
@@ -47,7 +47,7 @@ const NewTaskModal = ({ onClose }) => {
     }
 
     if (image.size > 1024000) {
-      return toast.warning('Too big size image!');
+      return toast.warning('The image is too large!');
     }
 
     if (reward < 1) {
@@ -55,7 +55,7 @@ const NewTaskModal = ({ onClose }) => {
     }
 
     if (taskName.length < 2) {
-      return toast.warning('Title is short!');
+      return toast.warning('Title is very short!');
     }
 
     const body = new FormData();

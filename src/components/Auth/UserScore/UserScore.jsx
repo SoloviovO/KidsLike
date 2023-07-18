@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { selectUserScore } from 'redux/Auth/AuthSelectors';
+
 import Loader from 'shared/Loader/Loader';
 
 import style from './UserScore.module.scss';

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
-import { ReactComponent as IconBurgerMenu } from '../../../images/icon-burgerMenu.svg';
-import { ReactComponent as CloseBurgerMenu } from '../../../images/icon-BurgerClose.svg';
+import { ReactComponent as IconBurgerMenu } from 'images/icon-burgerMenu.svg';
+import { ReactComponent as CloseBurgerMenu } from 'images/icon-BurgerClose.svg';
 
 import BurgerMenu from 'shared/BurgerMenu/BurgerMenu';
-import VerticalBar from 'shared/VerticalBar/VerticalBar';
+import VerticalStick from 'shared/VerticalStick/VerticalStick';
 
 import style from './AuthNav.module.scss';
 
@@ -39,7 +39,7 @@ const AuthNav = () => {
         >
           Log in
         </NavLink>
-        <VerticalBar />
+        <VerticalStick />
         <NavLink
           to="/contacts"
           className={

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { currentUserInfo, logInUser } from 'redux/Auth/AuthOperations';
 import {
-  addTaskToProvidedDays,
+  addTaskForDays,
   createTask,
   toggleTaskStatus,
 } from './PlanningOperations';
@@ -44,15 +44,15 @@ const planningSlice = createSlice({
         state.rewardsGained = payload.week.rewardsGained;
         state.rewardsPlanned = payload.week.rewardsPlanned;
       })
-      .addCase(addTaskToProvidedDays.pending, state => {
+      .addCase(addTaskForDays.pending, state => {
         state.isLoading = true;
       })
-      .addCase(addTaskToProvidedDays.fulfilled, (state, { payload }) => {
+      .addCase(addTaskForDays.fulfilled, (state, { payload }) => {
         state.rewardsPlanned = payload.updatedWeekPlannedRewards;
         state.tasks = payload.data;
         state.isLoading = false;
       })
-      .addCase(addTaskToProvidedDays.rejected, state => {
+      .addCase(addTaskForDays.rejected, state => {
         state.isLoading = false;
       })
       .addCase(createTask.pending, state => {
