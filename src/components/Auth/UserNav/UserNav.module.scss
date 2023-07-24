@@ -69,9 +69,17 @@
   z-index: 999;
 
   background: $backdrop-color;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility $main-transition, opacity $main-transition;
 
   @include desktop {
     background-color: transparent;
+  }
+
+  &.Visible {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -87,9 +95,15 @@
 
   background-color: $secondary-bg-color;
   box-shadow: -15px 0px 20px $backdrop-color;
+  transform: translateX(100%);
+  transition: transform $main-transition;
 
-  @include desktop {
-    display: none;
+  // @include desktop {
+  //   display: none;
+  // }
+
+  &.Visible {
+    transform: translateX(0);
   }
 }
 

@@ -47,8 +47,17 @@
   z-index: 20;
   background: $backdrop-color;
 
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility $main-transition, opacity $main-transition;
+
   @include tablet {
     background-color: transparent;
+  }
+
+  &.Visible {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -64,44 +73,50 @@
 
   background-color: $secondary-bg-color;
   box-shadow: -15px 0px 20px $backdrop-color;
+  transform: translateX(100%);
+  transition: transform $main-transition;
 
   @include tablet {
-    display: none;
+    background-color: transparent;
   }
 
-  .NavigationBurgerLink {
-    @include font(500, 12px, 15px);
+  &.Visible {
+    transform: translateX(0);
+  }
+}
 
-    display: block;
-    text-decoration: none;
-    color: $primary-bg-color;
-    letter-spacing: 0.48px;
-    width: 100%;
+.NavigationBurgerLink {
+  @include font(500, 12px, 15px);
 
-    padding: 14px 0 14px 20px;
+  display: block;
+  text-decoration: none;
+  color: $primary-bg-color;
+  letter-spacing: 0.48px;
+  width: 100%;
 
-    border-top: 1px solid $primary-bg-color;
-    border-bottom: 1px solid $primary-bg-color;
-    transition: color $main-transition;
+  padding: 14px 0 14px 20px;
 
-    &:hover {
-      color: $primary-text-color;
-    }
+  border-top: 1px solid $primary-bg-color;
+  border-bottom: 1px solid $primary-bg-color;
+  transition: color $main-transition;
 
-    &:last-child {
-      border-top: 1px solid transparent;
-    }
+  &:hover {
+    color: $primary-text-color;
   }
 
-  .NavigationMenuClose {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    transform: scale(1);
-    transition: trtransform $main-transition;
+  &:last-child {
+    border-top: 1px solid transparent;
+  }
+}
 
-    &:hover {
-      transform: scale(1.05);
-    }
+.NavigationMenuClose {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  transform: scale(1);
+  transition: trtransform $main-transition;
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
