@@ -86,55 +86,61 @@ const UserNav = () => {
           <LogOut openModal={handleTogleModal} />
           {isOpen && <ModalLogout onClose={handleTogleModal} />}
         </div>
-        {isShowNav && (
-          <div className={style.BurgerModalNav}>
-            <div className={style.BurgerModalNavBox}>
-              <div className={style.BurgerMenuBox}>
-                <div className={style.BurgerMenuWrapper}>
-                  <UserInfo />
-                  <VerticalStick />
-                  <LogOut openModal={handleTogleModal} />
-                  {isOpen && <ModalLogout onClose={handleTogleModal} />}
-                </div>
-                <div className={style.BurgerMenuClose}>
-                  <BurgerMenu onClick={handleIsShowMenu}>
-                    <CloseBurgerMenu />
-                  </BurgerMenu>
-                </div>
+        <div
+          className={`${style.BurgerModalNav} ${
+            isShowNav ? style.Visible : ''
+          }`}
+        >
+          <div
+            className={`${style.BurgerModalNavBox} ${
+              isShowNav ? style.Visible : ''
+            }`}
+          >
+            <div className={style.BurgerMenuBox}>
+              <div className={style.BurgerMenuWrapper}>
+                <UserInfo />
+                <VerticalStick />
+                <LogOut openModal={handleTogleModal} />
+                {isOpen && <ModalLogout onClose={handleTogleModal} />}
               </div>
-              <nav className={style.BurgerMenuNavMob}>
-                <NavLink
-                  to="/"
-                  className={style.BurgerMenuLinkMob}
-                  onClick={handleIsShowMenu}
-                >
-                  Main
-                </NavLink>
-                <NavLink
-                  to="/planning"
-                  className={style.BurgerMenuLinkMob}
-                  onClick={handleIsShowMenu}
-                >
-                  Planning
-                </NavLink>
-                <NavLink
-                  to="/awards"
-                  className={style.BurgerMenuLinkMob}
-                  onClick={handleIsShowMenu}
-                >
-                  Award
-                </NavLink>
-                <NavLink
-                  to="/contacts"
-                  className={style.BurgerMenuLinkMob}
-                  onClick={handleIsShowMenu}
-                >
-                  Contacts
-                </NavLink>
-              </nav>
+              <div className={style.BurgerMenuClose}>
+                <BurgerMenu onClick={handleIsShowMenu}>
+                  <CloseBurgerMenu />
+                </BurgerMenu>
+              </div>
             </div>
+            <nav className={style.BurgerMenuNavMob}>
+              <NavLink
+                to="/"
+                className={style.BurgerMenuLinkMob}
+                onClick={handleIsShowMenu}
+              >
+                Main
+              </NavLink>
+              <NavLink
+                to="/planning"
+                className={style.BurgerMenuLinkMob}
+                onClick={handleIsShowMenu}
+              >
+                Planning
+              </NavLink>
+              <NavLink
+                to="/awards"
+                className={style.BurgerMenuLinkMob}
+                onClick={handleIsShowMenu}
+              >
+                Award
+              </NavLink>
+              <NavLink
+                to="/contacts"
+                className={style.BurgerMenuLinkMob}
+                onClick={handleIsShowMenu}
+              >
+                Contacts
+              </NavLink>
+            </nav>
           </div>
-        )}
+        </div>
       </div>
     </>
   );

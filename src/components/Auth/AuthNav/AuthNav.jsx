@@ -51,31 +51,31 @@ const AuthNav = () => {
           Contacts
         </NavLink>
       </nav>
-      {isShow && (
-        <div className={style.NavigationBox}>
-          <nav className={style.NavigationBurger}>
-            <div className={style.NavigationMenuClose}>
-              <BurgerMenu onClick={handleIsShowMenu}>
-                <CloseBurgerMenu />
-              </BurgerMenu>
-            </div>
-            <NavLink
-              to="/auth"
-              className={style.NavigationBurgerLink}
-              onClick={handleIsShowMenu}
-            >
-              Log in
-            </NavLink>
-            <NavLink
-              to="/contacts"
-              className={style.NavigationBurgerLink}
-              onClick={handleIsShowMenu}
-            >
-              Contacts
-            </NavLink>
-          </nav>
-        </div>
-      )}
+      <div className={`${style.NavigationBox} ${isShow ? style.Visible : ''}`}>
+        <nav
+          className={`${style.NavigationBurger} ${isShow ? style.Visible : ''}`}
+        >
+          <div className={style.NavigationMenuClose}>
+            <BurgerMenu onClick={handleIsShowMenu}>
+              <CloseBurgerMenu />
+            </BurgerMenu>
+          </div>
+          <NavLink
+            to="/auth"
+            className={style.NavigationBurgerLink}
+            onClick={handleIsShowMenu}
+          >
+            Log in
+          </NavLink>
+          <NavLink
+            to="/contacts"
+            className={style.NavigationBurgerLink}
+            onClick={handleIsShowMenu}
+          >
+            Contacts
+          </NavLink>
+        </nav>
+      </div>
     </>
   );
 };
